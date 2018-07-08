@@ -19,7 +19,7 @@ $attributes = get_attributes($event); ?>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="col-md-12 text-center">
                         <br><!-- READ EVENT -->
                         Description: <?=$attributes['description']?>
                         <br>
@@ -53,8 +53,12 @@ $attributes = get_attributes($event); ?>
                                         case "party": echo "<br>"; break;
                                     }
                                 ?>
-                            <br>            
-                            <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                            <br>  
+                            @if(Auth::user())          
+                                <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                            @else
+                                <a href="{{ route('login') }}">Login</a> to sign up for this event
+                            @endif
                         <?php } ?>
                         <br>
                         <a href="{{ route('calendar') }}"><button class="btn btn-default pull-center">Back to Calendar</button></a>

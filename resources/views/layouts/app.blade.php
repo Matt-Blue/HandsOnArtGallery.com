@@ -100,10 +100,12 @@
 
 						<!-- Header -->
 							<header id="header">
-								<a href="index.html" class="logo"> Hands On <span>Art Gallery and Studio </span></a>
+								<img src="{{ asset('images/logo.PNG') }}" alt="logo" class="img-responsive" style="margin-right: 1rem; padding: 0.4rem; height: 3rem; width: 3rem;">
+								<a href="{{ url('/') }}" class="logo" style="padding-top: 0.5rem">
+									Hands On <span>Art Gallery and Studio </span></a>
 								<nav>
 									<ul>
-										<li><a href="#menu">Menu</a></li>
+										<li style="padding-top: 0.5rem"><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
 							</header>
@@ -131,9 +133,7 @@
                                         <li><a href="{{ route('register') }}">Register</a></li>
                                     @else
                                         <li class="dropdown">
-										<a href="{{ route('logout') }}"
-											onclick="event.preventDefault();
-													document.getElementById('logout-form').submit();">
+										<a href="{{ route('logout_user') }}">
 											Logout
 										</a>
 
@@ -142,30 +142,48 @@
 										</form>
                                         </li>
                                     @endif
+									<center>
+										<a href="https://www.facebook.com/handsonartgallery/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
+											<button class="btn btn-default"><span class="icon fa-facebook"/></button>
+										</a>
+										<a href="https://www.instagram.com/handsonartgallery/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
+											<button class="btn btn-default"><span class="icon fa-instagram"/></button>
+										</a>
+										<a href="https://twitter.com/ho_artgallery" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
+											<button class="btn btn-default"><span class="icon fa-twitter"/></button>
+										</a>
+									</center>
 								</ul>
 							</nav>
 
-        @yield('content')
+						@yield('content')
 
-        <!-- Footer -->
-            <div class="wrapper">
-                <div class="inner">
+						<!-- Footer -->
+							<div class="wrapper">
+								<div class="inner">
 
-                    <!-- Footer -->
-                        <footer id="footer">
-                            <ul class="contact-icons">
-                                <li class="icon fa-home">1625 SE 47th Terr Cape Coral, FL 33904 Unit 2</li>
-                                <li class="icon fa-phone">(239) 233-5662</li>
-                                <li class="icon fa-envelope-o">Lorna@HandsOnArtGallery.com</li>
-                            </ul>
-                            <p class="copyright">&copy; Hands On. All rights reserved.<br>Made by Matthew Bluestein</p>
-                        </footer>
+									<!-- Footer -->
+										<footer id="footer">
+											<ul class="contact-icons">
+												<li class="icon fa-home">1625 SE 47th Terr Cape Coral, FL 33904</li>
+												<li class="icon fa-phone">(239) 233-5662</li>
+												<li class="icon fa-envelope-o">Lorna@HandsOnArtGallery.com</li>
+											</ul>
+											<br>
+											<ul class="contact-icons">
+												<li style="display: inline;"><a href="https://www.facebook.com/handsonartgallery/" target="_blank"><button class="btn btn-primary"><span class="icon fa-facebook"/></button></a></li>
+												<li style="display: inline;"><a href="https://www.instagram.com/handsonartgallery/" target="_blank"><button class="btn btn-warning"><span class="icon fa-instagram"/></button></a></li>
+												<li style="display: inline;"><a href="https://twitter.com/ho_artgallery" target="_blank"><button class="btn btn-success"><span class="icon fa-twitter"/></button></a></li>											
+											</ul>
+											<p class="copyright">&copy; Hands On. All rights reserved.<br>Made by Matthew Bluestein</p>
+										</footer>
 
-                </div>
-            </div>
-        <!-- /Footer -->
-
-    </div>
+								</div>
+							</div>
+						<!-- /Footer -->
+					</div>
+				</div>
+			</div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

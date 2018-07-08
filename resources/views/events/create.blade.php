@@ -10,6 +10,17 @@
     <div class="wrapper" id="info">
         <div class="inner">
             <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
+                
+                @if(count($errors))
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Create an Event</h1>
@@ -22,7 +33,7 @@
 
                         <div class="form-group">
                             {!! Form::label('name', 'Name') !!}
-                            {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                            {!! Form::text('name', null, ['class' => 'form-control'], array('required' => 'required')) !!}
                         </div>
 
                         <div class="form-group">

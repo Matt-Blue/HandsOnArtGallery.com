@@ -55,13 +55,4 @@ class DashboardController extends Controller
         
         
     }
-        
-    ///////////////////////////////////
-    /////////////CALENDAR//////////////
-    ///////////////////////////////////
-
-    public function Calendar(){
-        $events = DB::table('events')->get();
-        return view('events.calendar', compact('events'));
-    }
 }

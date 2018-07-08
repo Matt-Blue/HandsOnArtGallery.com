@@ -13,9 +13,10 @@
                 </header>
 
                 <p>
-                    The service you will be getting includes an experienced artist with teaching experience. 
-                    You will be greeted with a happy face and an eager to help attitude.  
-                    Your experience at Hands On should be a relaxing and enjoyable with hands on assistance.
+                The instruction you will be receiving includes an experience artist 
+                who has a variety of teaching experience.  
+                You will be greeted with a pleasant and positive attitude, with service to meet your needs.  
+                Your experience at HANDS ON will be relaxing and enjoyable while receiving hands on assistance.
                 </p>
 
                 <p class="text-center">
@@ -43,16 +44,28 @@
                     </div>
                     <div class="10u 12u$(medium)">
                         <p>
-                        Workshops are designed to offer customers the opportunity to create a desired piece of art with instruction. 
+                            Workshops are designed to offer customers the opportunity to create a 
+                            desired piece of art with instruction. 
                         </p>
                         <p>
-                        A variety of scheduled workshops will be posted monthly on the website calendar. Each workshop consists of a selected item and chosen subject during scheduled 3 hour time slot. All workshops prices include all the supplies needed to complete the project. Set up and clean up will be provided, along with an apron to protect your clothing.  (It is still not recommended to wear nice clothes to these events.) 
+                            A variety of scheduled workshops will be posted monthly on the website calendar. 
+                            Each workshop consists of a selected item and chosen subject during 
+                            scheduled during a 2-3 hour time slot. 
+                            The price for all workshops includes all the supplies needed to complete the project. 
+                            Set up and clean up will be provided, along with an apron to protect your clothing.  
+                            (It is still not recommended to wear nice clothes to these events.) 
                         </p>
                         <p>
-                        Instruction and <i>hands on</i> guidance will be given throughout the workshop. All participants will be given the same directions, but it is ok to add your own twist!  In fact, it is encouraged for you to express your individuality. Workshops are open to all interested parties and it is a great way to meet other creative people. 
+                            Instruction and <i>HANDS ON</i> guidance will be given throughout the workshop. 
+                            All participants will be given the same directions, but it is ok to add your own twist!  
+                            In fact, it is encouraged for you to express your individuality. 
+                            Workshops are open to all interested parties and it is a great way to 
+                            meet other creative people. 
                         </p>
                         <p>
-                        You may sign up for workshops online through this website. Suggestions for specific workshops are always welcomed. Please arrive 15 minutes early so that the instruction can start on time. 
+                            You can sign up for workshops online through this website. 
+                            Suggestions for specific workshops are always welcomed. 
+                            Please arrive 15 minutes early so that the instruction can start on time. 
                         </p>
                     </div>
                 </div>
@@ -78,19 +91,30 @@
                     </div>
                     <div class="10u 12u$(medium)">
                         <p>
-                        Private parties are closed to the public and allows customers to design their own personal painting party. Scheduling a private party for a specific event, fundraiser or special occasion gives you the freedom to choose your item, subject, guests and date & time of the event. 
+                            Private parties are closed to the public and allows customers to design their own personal 
+                            painting party. Scheduling a private party for a specific event, fundraiser or special occasion 
+                            gives you the freedom to choose your item, subject, guests and date & time of the event. 
                         </p>
                         <p>
-                        Decorations and refreshments are welcomed.  Wine or beer, along with snacks, are popular for adult parties, but hard liquor is not permitted. Kids birthday parties are a hit, and a cake and or other items are welcome to enhance the effect of your party. Age appropriate instruction will be given and a variety of designs are available to choose from for party themes. Set up, clean up, aprons and personal hands on directions will be given during the party. Parties are priced by the item, per individual, which is all inclusive. 
+                            Decorations and refreshments are welcomed.  Wine or beer, along with snacks, are popular 
+                            for adult parties, but hard liquor is not permitted. Kids birthday parties are a hit, 
+                            and a cake and or other items are welcome to enhance the effect of your party. 
+                            Age appropriate instruction will be given and a variety of designs are available to choose from 
+                            for party themes. Set up, clean up, aprons and personal hands on directions will be given 
+                            during the party. Parties are priced by the item, per individual, which is all inclusive. 
                         </p>
                         <p>
-                        Parties must include 5 - 20 individuals.  There is a 50% deposit required to book a party and no refunds will be given.
+                            Parties must include 5 - 20 individuals.  
+                            There is a 50% deposit required to book a party and no refunds will be given.
                         </p>
                         <p>
-                        Off-site parties are available upon request and availability. Party packages are available upon request. All parties can be requested online through this website. 
+                            Off-site parties are available upon request and availability. 
+                            Party packages are available upon request. 
+                            All parties can be requested online through this website. 
                         </p>
                         <p>
-                        Special requests and suggestions are considered and welcomed. Arriving 15-30 minutes early will allow the party instruction to start on time. 
+                            Special requests and suggestions are considered and welcomed. 
+                            Arriving 15-30 minutes early will allow the project instruction to start on time. 
                         </p>
                     </div>
                 </div>
@@ -115,7 +139,13 @@
                     </div>
                     <div class="10u 12u$(medium)">
                         <p>
-                        The store will be open to the public Tuesday - Friday 12pm - 5pm for anyone wanting to work independently on an art project (hours subject to change.)  The fee will be the price of the item, and will include all supplies and studio time needed to finish the project. There will be no instruction, but collaboration is welcomed and encouraged.  Open Studio time is designed for individuals who seek little assistance and who want to work on their own art project.  Working during these hours can be a great time to develop relationships with others in the community, while working on your chosen project. 
+                            The store will be open to the public Tuesday - Friday 12pm - 5pm for anyone wanting to 
+                            work independently on an art project (hours subject to change.)  
+                            The fee will be the price of the item, and will include all supplies and studio time needed 
+                            to finish the project. There will be no instruction, but collaboration is welcomed and encouraged.  
+                            Open Studio time is designed for individuals who seek little assistance and who want to 
+                            work on their own art project.  Working during these hours can be a great time to develop 
+                            relationships with others in the community, while working on your chosen project. 
                         </p>
                     </div>
                 </div>
@@ -159,7 +189,15 @@
                                     <tr>
                                         <td>Wood Signs / Designs</td>
                                         <td>$30</td>
-                                    </tr>
+                                    </tr>														
+                                    <tr>
+                                        <td>Wooden Clock</td>
+                                        <td>$40</td>
+                                    </tr>														
+                                    <tr>
+                                        <td>Wine Glass</td>
+                                        <td>$20</td>
+                                    </tr>	
                                     <tr>
                                         <td>Wine Glasses (Set of Two)</td>
                                         <td>$30</td>
@@ -171,7 +209,7 @@
                                     <tr>
                                         <td>Coconut (Primed)</td>
                                         <td>$30</td>
-                                    </tr>														
+                                    </tr>													
                                 </tbody>
                             </table>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;//to get information on current user
 use Illuminate\Support\Facades\DB;//to perform database queries
 use Illuminate\Support\Facades\Redirect;//easy redirects
@@ -43,12 +44,15 @@ class EventsController extends Controller
     public function Read($id){
 
         $event =  DB::table('events')->where('id', '=', $id)->get();
-        if(Auth::user()->email === \Config::get('constants.super_admin')){
-            return view('events/update', compact('event'));
+        if(Auth::user()){
+            if(Auth::user()->email === \Config::get('constants.super_admin')){
+                return view('events/update', compact('event'));
+            }else{
+                return view('events/read', compact('event'));
+            } 
         }else{
             return view('events/read', compact('event'));
-        }        
-
+        }
     }
 
     ///////////////////////////////////
@@ -107,6 +111,14 @@ class EventsController extends Controller
     ///////////////////////////////////
 
     public function Check(Request $request){
+
+        $this->validate($request, [
+            'name' => 'required|min:5',
+            'description' => 'required|min:5',
+            'start_date' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
 
         // EVENT NAME VALIDATION
         if(!$request->get('name')){ redirect()->back(); }

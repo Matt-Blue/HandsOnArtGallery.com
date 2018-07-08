@@ -4,7 +4,12 @@
 // All routes lie below for the web application
 // API routes lie in the api.php file
 
-Auth::routes();                                                                 //authorization routes 
+//authorization routes 
+Auth::routes();    
+Route::get('/logout_user', function(){
+    Auth::logout();
+    return view('welcome');
+})->name('logout_user');                                                           
 
 // Default View
 // Route::get('/', function () { return view('index'); })->name('index');
@@ -22,7 +27,10 @@ Route::get('/gallery', function () {
 // Views
 
 Route::get('/dashboard', 'DashboardController@Dashboard')->name('dashboard');   //dashboard view
-Route::get('/calendar', 'DashboardController@Calendar')->name('calendar');      //calendar view
+Route::get('/calendar', function() {
+    $events = DB::table('events')->get();
+    return view('events/calendar', compact('events'));
+})->name('calendar');      //calendar view
 
 ////////////////////////////
 // Events CRUD Operations //

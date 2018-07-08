@@ -13,6 +13,17 @@
     <div class="wrapper" id="info">
         <div class="inner">
             <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
+                
+                @if(count($errors))
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Update Event</h1>
@@ -69,12 +80,12 @@
 
                         <div class="form-group">
                             {!! Form::label('price', 'Price') !!}
-                            {!! Form::number('price', $attributes['price'], ['class' => 'form-control', 'step' => 'any']) !!}
+                            {!! Form::number('price', $attributes['price'], ['class' => 'form-control', 'step' => 'any'], array('required' => 'required')) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('max', 'Max Attendees') !!}
-                            {!! Form::number('max', $attributes['max'], ['class' => 'form-control']) !!}
+                            {!! Form::number('max', $attributes['max'], ['class' => 'form-control'], ['min'=>1]) !!}
                         </div>
 
                         {!! Form::hidden('id', $attributes['id']) !!}
