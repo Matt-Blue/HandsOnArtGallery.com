@@ -1,1 +1,1 @@
-# [Full-Stack solution for Hands On Art Gallery and Studio](http://matthewbluestein.com/)
+# [Full-Stack solution for Hands On Art Gallery and Studio](http://handsonartgallery.com/)
