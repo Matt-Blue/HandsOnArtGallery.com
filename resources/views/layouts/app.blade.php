@@ -101,8 +101,8 @@
 						<!-- Header -->
 							<header id="header">
 								<img src="{{ asset('images/logo.PNG') }}" alt="logo" class="img-responsive" style="margin-right: 1rem; padding: 0.4rem; height: 3rem; width: 3rem;">
-								<a href="{{ url('/') }}" class="logo" style="padding-top: 0.5rem">
-									Hands On <span>Art Gallery and Studio </span></a>
+								<a href="{{ url('/') }}" class="logo" style="padding-top: 0.5rem; text-decoration: none;">
+									<div style="font-family: Papyrus, fantasy; display: inline;">Hands On</div> <span>Art Gallery and Studio </span></a>
 								<nav>
 									<ul>
 										<li style="padding-top: 0.5rem"><a href="#menu">Menu</a></li>
@@ -113,9 +113,11 @@
 						<!-- Nav -->
 							<nav id="menu">
 								<ul class="links">
-                                    <li><a href="/">Homepage</a></li>
-									<li><a href="{{ route('services') }}">Services</a></li>								
-									<li><a href="{{ route('calendar') }}">Calendar</a></li>
+                                    <li><a href="/">Homepage</a></li>							
+                                    <li><a href="/#services">Services</a></li>		
+									<li><a href="{{ route('calendar') }}">Calendar</a></li>							
+                                    <li><a href="/#info">Info & Hours</a></li>					
+                                    <li><a href="/#pricing">Pricing</a></li>
 
 									<!-- ALL -->
 									@if (Auth::user())
