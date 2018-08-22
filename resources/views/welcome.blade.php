@@ -7,36 +7,36 @@
     <div class="items">
         <section class="accent2">
             <h1>Artistic Services</h1>
-            <p>Open Studio, Workshops, Parties and Gallery</p>
+            <p>Workshops, Parties and Gallery</p>
             <ul class="actions">
-                <li><a href="{{ url('/#services') }}" class="button special">More</a></li>
+                <li><a href="{{ url('/#services') }}" class="button special">What We Offer</a></li>
             </ul>
         </section>
         <section class="accent3">
-            <h1>About the Owner</h1>
-            <p>Meet the woman behind Hands On</p>
+            <h1>Calendar</h1>
+            <p>See what's going on at Hands On</p>
             <ul class="actions">
-                <li><a href="#owner" class="button special">More</a></li>
+                <li><a href="{{ route('calendar') }}" class="button special">Hours & Calendar</a></li>
             </ul>
         </section>
     </div>
     <div class="slider">
         <article>
-            <img src="{{ asset('images/slideshow/slide1.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/lorna-wave.JPG') }}" alt="" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/slide2.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/solo-artist.JPG') }}" alt="" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/slide3.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/FMHS.JPG') }}" alt="" data-position="bottom right" />
         </article>
     </div>
 </section>
-                    
+
 <!-- What We Offer -->
 <div class="wrapper" id="services">
     <div class="inner">
-        <section class="main" style="background-color: #FCFCFC">
+        <section class="main" style="background-color: #FCFCFC;">
             <header class="major">
                 <h2>What We Offer</h2><br>
             </header>
@@ -93,7 +93,7 @@
 <!-- Workshops -->
 <div class="collapse wrapper" id="workshops">
     <div class="inner">
-        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #4cabb1; margin-bottom: 0.3rem; margin-top: 0.3rem;">
+        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #4cabb1;">
             <div style="position: relative; display: inline-block;">
                 
                 <!-- Close Button -->
@@ -148,7 +148,7 @@
 <!-- Parties -->
 <div class="collapse multi-collapse wrapper" id="parties">
     <div class="inner">
-        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #fed586; margin-bottom: 0.3rem; margin-top: 0.3rem;">
+        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #fed586;">
             <div style="position: relative; display: inline-block;">
                 
                 <!-- Close Button -->
@@ -206,7 +206,7 @@
 <!-- Open Studio -->
 <div class="collapse multi-collapse wrapper" id="studio">
     <div class="inner">
-        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #69c7ad; margin-bottom: 0.3rem; margin-top: 0.3rem;">
+        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #69c7ad;">
             <div style="position: relative; display: inline-block;">
                 
                 <!-- Close Button -->
@@ -243,70 +243,10 @@
         </section>
     </div>
 </div>
-
-<!-- Description of Business -->
-<!-- <div class="wrapper" id="about">
-    <div class="inner">
-        <section class="main accent2">
-            <p style="font-size: 130%">
-                HANDS ON is an interactive 2D Art gallery and painting studio open to the public. 
-                The studio is designed to accomodate people of all ages and allow them to refine their artistic skills.  
-                The facility has walk-in studio time with purchase of materials.  
-                Workshops and private parties are posted monthly on the Hands On Calendar.  
-                Parties can be held on site or at a requested destination upon availability. 
-                In addition to the studio, a gallery of artwork will be displayed for public. 
-            </p>
-        </section>
-    </div>
-</div> -->
-
-<!-- About the Owner -->
-<div class="wrapper" id="owner">
-    <div class="inner">
-        <section class="main accent3">
-            <!-- Header -->
-            <header class="major">
-                <h2>The Owner</h2>
-            </header>
-            <div class="row">
-                <div class="3u 12u$(medium)">
-                    <img src="{{ asset('images/lb.JPG') }}" style="width: 100%; height: 100%;">
-                </div>
-                <div class="9u 12u$(medium)">
-                    <p>
-                    Lorna Bluestein was born and raised in Indiana. 
-                    She received her BA in Fine Arts at Indiana University. 
-                    She spent five years in Massachusetts working as a retail manager.  
-                    She then married and moved to Colorado where she spent twenty years 
-                    living the beautiful mountain life. 
-                    During this time she raised two kids and taught preschool children. 
-                    In 2014, Lorna and her family relocated to Florida to be near their relatives. 
-                    Lorna found a job teaching high school art. 
-                    One of her students asked her to keep the art program HANDS ON, 
-                    instead of converting all the art to technology. 
-                    This suggestion inspired her to experiment and include a variety of 
-                    mediums and techniques into her lessons. 
-                    Lorna’s passion for art was back stronger than ever and this gave her 
-                    the ambition to start her own business. Her goal is to teach a variety of art styles 
-                    and techniques to all ages and to inspire those who wish to learn 
-                    HANDS ON craftsmanship.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
-<!-- Contact Information and Hours -->
+<!-- Contact Information -->
 <div class="wrapper" id="info">
     <div class="inner">
-        <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
-            <!-- Contact Info and Hours Header -->
-            <header class="major">
-                <h2>
-                    Contact Info and Hours
-                </h2>
-            </header>
+        <section class="main" style="background-color: #FCFCFC; padding-top: 0rem;"><!--Color makes it blend with the logo-->
             <!-- Logo and Information -->
             <div class="row">
                 <div class="12u 12u$(medium)">
@@ -335,55 +275,63 @@
                     </p>
                 </div>
             </div>
-            <div class="row" style="padding-top 5px;">
-                <div class="12u 12u$(medium)">
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Event Type</th>
-                                <th>Weekdays</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Open Studio</td>
-                                <td>Tuesday - Saturday</td>
-                                <td>12:00pm - 5:00pm</td>
-                            </tr>													
-                            <tr>
-                                <td>Workshops (Scheduled)</td>
-                                <td>Tuesday - Sunday</td>
-                                <td>9:00am - 9:00pm</td>
-                            </tr>													
-                            <tr>
-                                <td>Parties (Requested)</td>
-                                <td>Tuesday - Sunday</td>
-                                <td>9:00am - 9:00pm</td>
-                            </tr>													
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- Other Info -->
+        </section>
+    </div>
+</div>
+
+<!-- Daily Specials -->
+<div class="wrapper" id="specials">
+    <div class="inner">
+        <section class="main accent3">
+            <!-- Header -->
+            <header class="major">
+                <h2>Daily Specials</h2>
+            </header>
             <div class="row">
-                <div class="12u 12u$(medium)">      
-                    <h3>Open studio is every day unless an event is already scheduled.  
-                    All events can be found in the <a href="{{ route('calendar') }}">calendar</a>.
-                    If you would like to request a party of your own please visit your <a href="{{ route('dashboard') }}">dashboard</a>.
-                    </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u 12u$(medium)">                    
-                    <p><header class="major">*Parties can be scheduled from 9am-9pm depending on availability</header></p>
-                </div>
-                <div class="4u 12u$(medium)">
-                    <p><header class="major">*Off-site parties can be arranged</header></p>
-                </div>
-                <div class="4u 12u$(medium)">
-                    <p><header class="major">*Open studio time will be closed if a private party is scheduled</header></p>
+            <div class="col-md-8 col-md-offset-2">
+                    <div class="table-wrapper" style="padding: 1rem; border: 1px solid white;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Discount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Coconut Monday</td>
+                                    <td>$5 off Coconuts</td>
+                                </tr>
+                                <tr>
+                                    <td>Closed</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Wine Glass Wednesday</td>
+                                    <td>2 for 1 Wine Glasses</td>
+                                </tr>
+                                <tr>
+                                    <td>Canvas Thursday</td>
+                                    <td>10% off Any Size Canvas</td>
+                                </tr>
+                                <tr>
+                                    <td>Fluid Painting Friday</td>
+                                    <td>10% off Any Size Fluid Painting</td>
+                                </tr>
+                                <tr>
+                                    <td>Wood Sign Saturday</td>
+                                    <td>20% off Any Size Wood Sign</td>
+                                </tr>
+                                <tr>
+                                    <td>Small Furniture Sunday</td>
+                                    <td>Paint Your Own Furniture 12 - 5pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="major">
+                        <center><b>Discounts may not be combined</b></center>
+                    </p>
                 </div>
             </div>
         </section>
@@ -445,11 +393,25 @@
                                     <td>Coconut (Primed)</td>
                                     <td>$30</td>
                                 </tr>													
+                                <tr>
+                                    <td>Cape Coral Rocks</td>
+                                    <td>$3</td>
+                                </tr>													
+                                <tr>
+                                    <td>Daily Studio Fee</td>
+                                    <td>$20</td>
+                                </tr>													
+                                <tr>
+                                    <td>Project Add-Ons</td>
+                                    <td>$10</td>
+                                </tr>													
                             </tbody>
                         </table>
                     </div>
                     <p class="major">
-                        <center><b>Other items available upon request</b></center>
+                        <center><b>Other items available upon request</b>
+                        <center><b>Fluid painting additional</b></center>
+                        <center><b>Must be 16 or older without supervision</b></center>
                     </p>
                 </div>
             </div>

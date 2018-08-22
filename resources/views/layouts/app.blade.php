@@ -1,6 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122302635-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-122302635-1');
+		</script>
+
+
 		<title>Hands On</title>
         <html lang="{{ app()->getLocale() }}">
 		<meta charset="utf-8" />
@@ -102,7 +113,7 @@
 							<header id="header">
 								<img src="{{ asset('images/logo.PNG') }}" alt="logo" class="img-responsive" style="margin-right: 1rem; padding: 0.4rem; height: 3rem; width: 3rem;">
 								<a href="{{ url('/') }}" class="logo" style="padding-top: 0.5rem; text-decoration: none;">
-									<div style="font-family: Papyrus, fantasy; display: inline;">Hands On</div> <span>Art Gallery and Studio </span></a>
+									<div style="font-family: Papyrus, fantasy; display: inline;">Hands On</div> <span>Art Gallery & Studio </span></a>
 								<nav>
 									<ul>
 										<li style="padding-top: 0.5rem"><a href="#menu">Menu</a></li>
@@ -113,11 +124,9 @@
 						<!-- Nav -->
 							<nav id="menu">
 								<ul class="links">
-                                    <li><a href="/">Homepage</a></li>							
-                                    <li><a href="/#services">Services</a></li>		
-									<li><a href="{{ route('calendar') }}">Calendar</a></li>							
-                                    <li><a href="/#info">Info & Hours</a></li>					
-                                    <li><a href="/#pricing">Pricing</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/#services">Services</a></li>
+									<li><a href="{{ route('calendar') }}">Hours & Calendar</a></li>
 
 									<!-- ALL -->
 									@if (Auth::user())
@@ -148,12 +157,6 @@
 										<a href="https://www.facebook.com/handsonartgallery/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
 											<button class="btn btn-default"><span class="icon fa-facebook"/></button>
 										</a>
-										<a href="https://www.instagram.com/handsonartgallery/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
-											<button class="btn btn-default"><span class="icon fa-instagram"/></button>
-										</a>
-										<a href="https://twitter.com/ho_artgallery" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
-											<button class="btn btn-default"><span class="icon fa-twitter"/></button>
-										</a>
 									</center>
 								</ul>
 							</nav>
@@ -174,8 +177,6 @@
 											<br>
 											<ul class="contact-icons">
 												<li style="display: inline;"><a href="https://www.facebook.com/handsonartgallery/" target="_blank"><button class="btn btn-primary"><span class="icon fa-facebook"/></button></a></li>
-												<li style="display: inline;"><a href="https://www.instagram.com/handsonartgallery/" target="_blank"><button class="btn btn-warning"><span class="icon fa-instagram"/></button></a></li>
-												<li style="display: inline;"><a href="https://twitter.com/ho_artgallery" target="_blank"><button class="btn btn-success"><span class="icon fa-twitter"/></button></a></li>											
 											</ul>
 											<p class="copyright">&copy; Hands On. All rights reserved.<br>Made by Matthew Bluestein</p>
 										</footer>
@@ -196,9 +197,9 @@
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.3/jquery.timepicker.min.js"></script>
-    <script type="text/javascript">
+	<!-- Timepicker -->
+	<script type="text/javascript">
         $(document).ready(function() {
             $('#timepicker_start').timepicker({
                 showLeadingZero: false,
@@ -211,6 +212,6 @@
                 interval: 15
             });
         });
-    </script>
+	</script>
 </body>
 </html>
