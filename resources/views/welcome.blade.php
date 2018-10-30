@@ -7,7 +7,7 @@
     <div class="items">
         <section class="accent2">
             <h1>Artistic Services</h1>
-            <p>Workshops, Parties and Gallery</p>
+            <p>Workshops, Parties and Walk-In Studio</p>
             <ul class="actions">
                 <li><a href="{{ url('/#services') }}" class="button special">What We Offer</a></li>
             </ul>
@@ -22,13 +22,13 @@
     </div>
     <div class="slider">
         <article>
-            <img src="{{ asset('images/slideshow/lorna-wave.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/lorna-wave.jpg') }}" alt="lorna bluestein wave painting" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/solo-artist.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/solo-artist.jpg') }}" alt="solo artist" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/FMHS.JPG') }}" alt="" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/group.jpg') }}" alt="group art" data-position="bottom right" />
         </article>
     </div>
 </section>
@@ -71,7 +71,7 @@
                 </section>
                 <section>
                     <span class="icon fa-paint-brush major accent3"></span>
-                    <h3>Open Studio</h3>
+                    <h3>Walk-In Studio</h3>
                     <p>
                         Walk in the gallery during store hours and select an available item.
                         Use of all supplies and studio time are included in the item cost.
@@ -110,7 +110,7 @@
                     <!-- Image -->
                     <div class="3u 12u$(medium)">
                         <section>
-                            <img class="img-thumbnail" src="{{ asset('images/events/workshop.JPG') }}" style="border: 0 none; box-shadow: none;">
+                            <img src="{{ asset('images/events/workshop.JPG') }}" alt="art workshop" class="img-thumbnail" style="border: 0 none; box-shadow: none;">
                         </section>
                     </div>
                     <!-- Content -->
@@ -165,7 +165,7 @@
                     <!-- Image -->
                     <div class="3u 12u$(medium)">
                         <section>
-                            <img class="img-thumbnail" src="{{ asset('images/events/party.JPG') }}" style="border: 0 none; box-shadow: none;">
+                            <img src="{{ asset('images/events/party.JPG') }}" alt="art party" class="img-thumbnail" style="border: 0 none; box-shadow: none;">
                         </section>
                     </div>
                     <!-- Content -->
@@ -203,7 +203,7 @@
     </div>
 </div>
 
-<!-- Open Studio -->
+<!-- Walk-In Studio -->
 <div class="collapse multi-collapse wrapper" id="studio">
     <div class="inner">
         <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #69c7ad;">
@@ -216,24 +216,23 @@
                 </a>
 
                 <header class="major">
-                    <h2>Open Studio</h2><br>
+                    <h2>Walk-In Studio</h2><br>
                 </header>
 
                 <div class="row">
                     <!-- Image -->
                     <div class="3u 12u$(medium)">
                         <section>
-                            <img class="img-thumbnail" src="{{ asset('images/events/studio.JPG') }}" style="border: 0 none; box-shadow: none;">
+                            <img src="{{ asset('images/events/studio.JPG') }}" alt="walk-in studio art" class="img-thumbnail" style="border: 0 none; box-shadow: none;">
                         </section>
                     </div>
                     <!-- Content -->
                     <div class="9u 12u$(medium)">
                     <p>
-                            The store will be open to the public Tuesday - Friday 12pm - 5pm for anyone wanting to 
-                            work independently on an art project (hours subject to change.)  
+                            The store will be open to the public based on the hours shown in the <a href="{{ route('calendar') }}">calendar</a>.
                             The fee will be the price of the item, and will include all supplies and studio time needed 
                             to finish the project. There will be no instruction, but collaboration is welcomed and encouraged.  
-                            Open Studio time is designed for individuals who seek little assistance and who want to 
+                            Walk-In Studio time is designed for DIY projects that require little to no assistance and who want to 
                             work on their own art project.  Working during these hours can be a great time to develop 
                             relationships with others in the community, while working on your chosen project. 
                         </p>
@@ -255,7 +254,7 @@
                         <div class="row">
                             <div class="12u 12u$(medium) text-center">
                                 <span class="icon fa-home" style="margin-right: 10px"></span>
-                                1625 SE 47th Terr Cape Coral, FL 33904 Unit 2
+                                1625 SE 47th Terrace Cape Coral, FL 33904 Unit 2
                             </div>
                         </div>
                         <!-- Email -->
@@ -280,57 +279,94 @@
 </div>
 
 <!-- Daily Specials -->
-<div class="wrapper" id="specials">
+<!-- <div class="wrapper" id="specials"> -->
+    <!-- <div class="inner"> -->
+        <!-- <section class="main accent3"> -->
+            <!-- Header -->
+            <!-- <header class="major"> -->
+                <!-- <h2>Daily Specials</h2> -->
+            <!-- </header> -->
+            <!-- <div class="row"> -->
+            <!-- <div class="col-md-8 col-md-offset-2"> -->
+                    <!-- <div class="table-wrapper" style="padding: 1rem; border: 1px solid white;"> -->
+                        <!-- <table> -->
+                            <!-- <thead> -->
+                                <!-- <tr> -->
+                                    <!-- <th>Day</th> -->
+                                    <!-- <th>Discount</th> -->
+                                <!-- </tr> -->
+                            <!-- </thead> -->
+                            <!-- <tbody> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Coconut Monday</td> -->
+                                    <!-- <td>$5 off Coconuts</td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Closed</td> -->
+                                    <!-- <td></td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Wine Glass Wednesday</td> -->
+                                    <!-- <td>2 for 1 Wine Glasses</td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Canvas Thursday</td> -->
+                                    <!-- <td>10% off Any Size Canvas</td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Fluid Painting Friday</td> -->
+                                    <!-- <td>10% off Any Size Fluid Painting</td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Wood Sign Saturday</td> -->
+                                    <!-- <td>20% off Any Size Wood Sign</td> -->
+                                <!-- </tr> -->
+                                <!-- <tr> -->
+                                    <!-- <td>Small Furniture Sunday</td> -->
+                                    <!-- <td>Paint Your Own Furniture 12 - 5pm</td> -->
+                                <!-- </tr> -->
+                            <!-- </tbody> -->
+                        <!-- </table> -->
+                    <!-- </div> -->
+                    <!-- <p class="major"> -->
+                        <!-- <center><b>Discounts may not be combined</b></center> -->
+                    <!-- </p> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </section> -->
+    <!-- </div> -->
+<!-- </div> -->
+
+<!-- About the Owner -->
+<div class="wrapper" id="owner">
     <div class="inner">
         <section class="main accent3">
             <!-- Header -->
             <header class="major">
-                <h2>Daily Specials</h2>
+                <h2>The Artist</h2>
             </header>
             <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                    <div class="table-wrapper" style="padding: 1rem; border: 1px solid white;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Day</th>
-                                    <th>Discount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Coconut Monday</td>
-                                    <td>$5 off Coconuts</td>
-                                </tr>
-                                <tr>
-                                    <td>Closed</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Wine Glass Wednesday</td>
-                                    <td>2 for 1 Wine Glasses</td>
-                                </tr>
-                                <tr>
-                                    <td>Canvas Thursday</td>
-                                    <td>10% off Any Size Canvas</td>
-                                </tr>
-                                <tr>
-                                    <td>Fluid Painting Friday</td>
-                                    <td>10% off Any Size Fluid Painting</td>
-                                </tr>
-                                <tr>
-                                    <td>Wood Sign Saturday</td>
-                                    <td>20% off Any Size Wood Sign</td>
-                                </tr>
-                                <tr>
-                                    <td>Small Furniture Sunday</td>
-                                    <td>Paint Your Own Furniture 12 - 5pm</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="major">
-                        <center><b>Discounts may not be combined</b></center>
+                <div class="3u 12u$(medium)">
+                    <img src="{{ asset('images/lb.JPG') }}" style="width: 100%; height: 100%;">
+                </div>
+                <div class="9u 12u$(medium)">
+                    <p>
+                    Lorna Bluestein was born and raised in Indiana. 
+                    She received her BA in Fine Arts at Indiana University. 
+                    She spent five years in Massachusetts working as a retail manager.  
+                    She then married and moved to Colorado where she spent twenty years 
+                    living the beautiful mountain life. 
+                    During this time she raised two kids and taught preschool children. 
+                    In 2014, Lorna and her family relocated to Florida to be near their relatives. 
+                    Lorna found a job teaching high school art. 
+                    One of her students asked her to keep the art program HANDS ON, 
+                    instead of converting all the art to technology. 
+                    This suggestion inspired her to experiment and include a variety of 
+                    mediums and techniques into her lessons. 
+                    Lorna’s passion for art was back stronger than ever and this gave her 
+                    the ambition to start her own business. Her goal is to teach a variety of art styles 
+                    and techniques to all ages and to inspire those who wish to learn 
+                    HANDS ON craftsmanship.
                     </p>
                 </div>
             </div>
@@ -382,7 +418,7 @@
                                     <td>$20</td>
                                 </tr>	
                                 <tr>
-                                    <td>Wine Glasses (Set of Two)</td>
+                                    <td>Wine Glasses x 2</td>
                                     <td>$30</td>
                                 </tr>
                                 <tr>
@@ -394,13 +430,13 @@
                                     <td>$30</td>
                                 </tr>													
                                 <tr>
-                                    <td>Cape Coral Rocks</td>
+                                    <td>Cape Coral Rock</td>
                                     <td>$3</td>
-                                </tr>													
+                                </tr>														
                                 <tr>
-                                    <td>Daily Studio Fee</td>
-                                    <td>$20</td>
-                                </tr>													
+                                    <td>Cape Coral Rocks x 4</td>
+                                    <td>$10</td>
+                                </tr>														
                                 <tr>
                                     <td>Project Add-Ons</td>
                                     <td>$10</td>

@@ -26,7 +26,7 @@ $attributes = get_attributes($event); ?>
                         Event Type: 
                             <?php 
                                 switch($attributes['type']){
-                                    case "open": echo "Open Studio"; break;
+                                    case "open": echo "Walk-In Studio"; break;
                                     case "workshop": echo "Workshop"; break;
                                     case "party": echo "Party"; break;
                                 }

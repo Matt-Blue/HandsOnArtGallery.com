@@ -12,11 +12,16 @@
 		</script>
 
 
-		<title>Hands On</title>
         <html lang="{{ app()->getLocale() }}">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- SEO METADATA -->
+		<title>Hands On Art Gallery and Studio, bringing creativity to Cape Coral</title>
+		<meta name="description" content="Hands On is Cape Coral's most creative art studio and gallery, offering workshops, parties and more!  We specialize in painting and teach people of all ages." />
+		<meta name="robots" content="" />
+		<meta name="keywords" content="Cape Coral art paint painting creative creativity projects private parties wine fun walk-in studio " />
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -170,7 +175,7 @@
 									<!-- Footer -->
 										<footer id="footer">
 											<ul class="contact-icons">
-												<li class="icon fa-home">1625 SE 47th Terr Cape Coral, FL 33904</li>
+												<li class="icon fa-home">1625 SE 47th Terrace Cape Coral, FL 33904</li>
 												<li class="icon fa-phone">(239) 233-5662</li>
 												<li class="icon fa-envelope-o">Lorna@HandsOnArtGallery.com</li>
 											</ul>

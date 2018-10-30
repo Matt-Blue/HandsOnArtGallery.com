@@ -21,46 +21,22 @@
 
                     <div class="row" style="padding-top 5px;">
                         <div class="12u 12u$(medium)">
-                            <div class="table-wrapper">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Event Type</th>
-                                            <th>Weekdays</th>
-                                            <th>Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Open Studio</td>
-                                            <td>Tuesday - Saturday</td>
-                                            <td>12:00pm - 5:00pm</td>
-                                        </tr>													
-                                        <tr>
-                                            <td>Workshops (Scheduled)</td>
-                                            <td>Tuesday - Sunday</td>
-                                            <td>9:00am - 9:00pm</td>
-                                        </tr>													
-                                        <tr>
-                                            <td>Parties (Requested)</td>
-                                            <td>Tuesday - Sunday</td>
-                                            <td>9:00am - 9:00pm</td>
-                                        </tr>													
-                                    </tbody>
-                                </table>
-                            </div>
+                            <h2><header class="major">Open Tuesday through Saturday 12pm - 6pm</header></h2>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="4u 12u$(medium)">                    
-                            <p><header class="major">*Parties can be scheduled from 9am-9pm depending on availability</header></p>
+                        <div class="3u 12u$(medium)">                    
+                            <p><header class="major">Parties can be scheduled any time depending on availability, off-site parties can be arranged</header></p>
                         </div>
-                        <div class="4u 12u$(medium)">
-                            <p><header class="major">*Off-site parties can be arranged</header></p>
+                        <div class="3u 12u$(medium)">                    
+                            <p><header class="major">You can request a party by creating an account and accessing your <a href="{{ route('dashboard') }}">dashboard</a></header></p>
                         </div>
-                        <div class="4u 12u$(medium)">
-                            <p><header class="major">*Open studio time will be closed if a private party is scheduled</header></p>
+                        <div class="3u 12u$(medium)">
+                            <p><header class="major">Walk-In studio time will be closed if a private party is scheduled on the calendar</header></p>
+                        </div>
+                        <div class="3u 12u$(medium)">
+                            <p><header class="major">All workshops will be posted at least a week ahead of time on the calendar</header></p>
                         </div>
                     </div>
 
@@ -123,7 +99,7 @@
                     <!-- Other Info -->
                     <div class="row">
                         <div class="12u 12u$(medium)">      
-                            <h3>Open studio is every day unless an event is already scheduled.  
+                            <h3>Walk-In studio is every day unless an event is already scheduled.  
                             All events can be found in the <a href="{{ route('calendar') }}">calendar</a>.
                             If you would like to request a party of your own please visit your <a href="{{ route('dashboard') }}">dashboard</a>.
                             </h3>

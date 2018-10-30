@@ -12,25 +12,23 @@ Route::get('/logout_user', function(){
 })->name('logout_user');                                                           
 
 // Default View
-// Route::get('/', function () { return view('index'); })->name('index');
-// Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 Route::get('/', function () {
     return view('welcome');
-}); 
-Route::get('/services', function () {
-    return view('services');
-})->name('services'); 
+});
+
+// Gallery View
 Route::get('/gallery', function () {
     return view('gallery.gallery');
-})->name('gallery'); 
+})->name('gallery');
 
-// Views
+// Dashboard
+Route::get('/dashboard', 'DashboardController@Dashboard')->name('dashboard');
 
-Route::get('/dashboard', 'DashboardController@Dashboard')->name('dashboard');   //dashboard view
+// Calendar
 Route::get('/calendar', function() {
     $events = DB::table('events')->get();
     return view('events/calendar', compact('events'));
-})->name('calendar');      //calendar view
+})->name('calendar');
 
 ////////////////////////////
 // Events CRUD Operations //

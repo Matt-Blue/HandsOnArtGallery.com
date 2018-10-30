@@ -52,7 +52,7 @@
                         <div class="form-group">
                             {!! Form::label('type', 'Type') !!}
                             {!! Form::select('type', [
-                                'open' => 'Open Studio',
+                                'open' => 'Walk-In Studio',
                                 'workshop' => 'Workshop',
                                 'party' => 'Party'
                             ], $attributes['type']) !!}

@@ -70,7 +70,7 @@
                                             Event Type: 
                                                 <?php 
                                                     switch($e->type){
-                                                        case "open": echo "Open Studio"; break;
+                                                        case "open": echo "Walk-In Studio"; break;
                                                         case "workshop": echo "Workshop"; break;
                                                         case "party": echo "Party"; break;
                                                     }
