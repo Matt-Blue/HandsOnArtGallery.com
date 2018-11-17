@@ -89,6 +89,7 @@
                         </div>
 
                         {!! Form::hidden('id', $attributes['id']) !!}
+                        {!! Form::hidden('image', $attributes['image']) !!}
                         {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']) !!}
                         <a href="{{ route('calendar') }}"><button class="btn btn-default pull-right">Cancel</button></a>
                         {!! Form::close() !!}

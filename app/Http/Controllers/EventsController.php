@@ -102,6 +102,7 @@ class EventsController extends Controller
         $event->start_time = $attributes['start_time'];
         $event->end_date = $attributes['end_date'];
         $event->end_time = $attributes['end_time'];
+        $event->image = $attributes['image'];
         $event->save();
 
     }
@@ -164,6 +165,16 @@ class EventsController extends Controller
         if(!$request->get('max')){ $max = \Config::get('constants.max_attendees'); }
         else{ $max = $request->get('max'); }
 
+        // Upload photo & add slug to attributes object
+        if($request->file('image')){
+            $file = $request->file('image');
+            $file_destination = 'public/img';
+            $file_name = time().'.jpg';
+            $file->move($file_destination, $file_name);
+        }elseif($request->get('image')){
+            $file_name = $request->get('image');
+        }
+
         // Set attributes to return
         $attributes = array(
             'name' => $name, 
@@ -174,7 +185,8 @@ class EventsController extends Controller
             'end_time' => $end_time,
             'type' => $type,
             'price' => $price,
-            'max' => $max
+            'max' => $max,
+            'image' => $file_name
         );
         return $attributes;
 

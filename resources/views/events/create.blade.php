@@ -29,7 +29,10 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <!-- CREATE FORM -->
-                        {!! Form::open(['route' => 'create']) !!}
+                        {!! Form::open(array(
+                            'route' => 'create',
+                            'files' => 'true'
+                        )) !!}
 
                         <div class="form-group">
                             {!! Form::label('name', 'Name') !!}
@@ -48,6 +51,12 @@
                                 'workshop' => 'Workshop',
                                 'party' => 'Party'
                             ], 0) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('image', 'Image') !!}
+                            {!! Form::file('image', array('class' => 'image')) !!}
+                            {{ csrf_field() }}
                         </div>
 
                         <div class="form-group">

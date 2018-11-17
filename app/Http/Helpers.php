@@ -13,6 +13,7 @@ function get_attributes($event){
         $end_time = $event->end_time;
         $price = $event->price;
         $max = $event->max;
+        $image = $event->image;
     }
     return array(
         "id" => $id,
@@ -25,6 +26,7 @@ function get_attributes($event){
         "end_time" => $end_time,
         "price" => $price,
         "max" => $max,
+        "image" => $image,
     );
 }
 

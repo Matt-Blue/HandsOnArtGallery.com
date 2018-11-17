@@ -6,8 +6,8 @@
 
 <!-- Retrieve Compacted Event(s) With Helper Function -->
 <?php
-
-$attributes = get_attributes($event); ?>
+$attributes = get_attributes($event); 
+?>
 
 <div class="container-fluid">
     <div class="wrapper" id="info">
@@ -19,7 +19,10 @@ $attributes = get_attributes($event); ?>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-4 text-center">
+                        <img src="{{asset('public/img/' . $attributes['image'])}}" alt="<?=$attributes['name']?>" width="100%"/>
+                    </div>
+                    <div class="col-md-8 text-center">
                         <br><!-- READ EVENT -->
                         Description: <?=$attributes['description']?>
                         <br>
