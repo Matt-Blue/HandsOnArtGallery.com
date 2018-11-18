@@ -19,10 +19,14 @@ $attributes = get_attributes($event);
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="{{asset('public/img/' . $attributes['image'])}}" alt="<?=$attributes['name']?>" width="100%"/>
-                    </div>
-                    <div class="col-md-8 text-center">
+                    <?php if(isset($attributes['image'])){ ?>
+                        <div class="col-md-4 text-center">
+                            <img src="{{asset('public/img/' . $attributes['image'])}}" alt="<?=$attributes['name']?>" width="100%"/>
+                        </div>                    
+                        <div class="col-md-8 text-center">
+                    <?php } else { ?>
+                        <div class="col-md-12 text-center">
+                    <?php } ?>
                         <br><!-- READ EVENT -->
                         Description: <?=$attributes['description']?>
                         <br>

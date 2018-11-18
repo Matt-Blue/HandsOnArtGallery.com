@@ -15,6 +15,7 @@
                         <h1>Admin Panel</h1>
                     </div>
                 </div>    
+                <!-- Buttons -->
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <center><a href="{{ route('calendar') }}"><button class="btn btn-primary pull-center">Manage Events</button></a></center>
@@ -31,6 +32,49 @@
     </div>
 </div>
 <hr>
+
+<!-- ALL SIGNUPS -->
+<div class="container-fluid" id="requests">
+    <div class="wrapper" id="info">
+        <div class="inner">
+            <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Upcoming Signups</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><!-- READ REQUESTS -->
+                        <?php 
+                        if(!isset($signups) || sizeof($signups) === 0){ ?>
+                            <div class="text-center">                            
+                                There are no future signups!<br><br>                                
+                            </div>
+                        <?php } else { 
+                            foreach($signups as $s){ 
+                                $event =  DB::table('events')->where('id', '=', $s->event_id)->get();
+                                $user =  DB::table('users')->where('id', '=', $s->user_id)->get();
+                                ?>
+                                <div class="col-md-4 text-left">
+                                    <?php foreach($event as $e){ ?>
+                                        Event: <?=$e->name?><br>
+                                        Date: <?=$e->start_date?><br>
+                                    <?php } ?>
+                                    <?php foreach($user as $u){ ?>
+                                        User: <?=$u->name?><br>
+                                        Email: <?=$u->email?><br><br><br>
+                                    <?php } ?>
+                                </div>
+                            <?php }
+                        } ?>
+                        
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </div> 
+</div>
 
 <!-- USER SECTION -->
 @else
@@ -130,7 +174,7 @@
                     <div class="col-md-12">
                         <br><!-- READ REQUESTS -->
                         <?php 
-                        if(!isset($requests)){ ?>
+                        if(!isset($requests) || sizeof($requests) === 0){ ?>
                             <div class="text-center">                            
                                 You have no party requests!<br><br>                                
                             </div>
@@ -139,7 +183,7 @@
                             foreach($requests as $request){ 
                                 $event =  DB::table('events')->where('id', '=', $request->event_id)->get();  
                                 if(isset($event)){  
-                                    echo('<div class="col-md-4 text-left>"');
+                                    echo('<div class="col-md-4 text-left">');
                                 ?>
                                     Name: <?= $event[0]->name; ?>
                                     <br>

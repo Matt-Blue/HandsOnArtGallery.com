@@ -148,9 +148,9 @@ class EventsController extends Controller
         else{
             if(stripos($request->get('end_time'), 'M') !== false){
                 $end_time = $this->TimeConvert($request->get('end_time')); 
-            }else{                
+            }else{
                 $end_time = $request->get('end_time');
-            }            
+            }
         }
 
         // TYPE VALIDATION
@@ -173,6 +173,8 @@ class EventsController extends Controller
             $file->move($file_destination, $file_name);
         }elseif($request->get('image')){
             $file_name = $request->get('image');
+        }else{
+            $file_name = null;
         }
 
         // Set attributes to return

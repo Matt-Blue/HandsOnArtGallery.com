@@ -37,22 +37,29 @@ class DashboardController extends Controller
         }
 
         // get signups
-        $s_check = DB::table('signups')->where('user_id', '=', Auth::user()->id)->exists();
-        if($s_check){
-            $signups =  DB::table('signups')->where('user_id', '=', Auth::user()->id)->get();
-            // return view with signups        
+        if(Auth::user()->email === \Config::get('constants.super_admin')){
+            // all signups after current date for admin use
+            $signups = array();
+            $events = DB::table('events')->where('start_date', '>=', date("Y-m-d"))->get();
+            foreach($events as $e){
+                $signup = DB::table('signups')->where('event_id', '=', $e->id)->get();
+                foreach($signup as $s){
+                    array_push($signups, $s);
+                }
+            }
+        }else{
+            // all signups associated with user
+            if(DB::table('signups')->where('user_id', '=', Auth::user()->id)->exists()){
+                $signups =  DB::table('signups')->where('user_id', '=', Auth::user()->id)->get();
+            }
+        }
+        
+
+        if(isset($signups)){
             return view('dashboard')->with('requests', $requests)->with('signups', $signups);
         }else{
             // return view without signups
-            if(Auth::user()->email === \Config::get('constants.super_admin')){
-                // if super admin return all events for editing
-                $events = DB::table('events')->get();
-                return view('dashboard')->with('requests', $requests)->with('events', $events);
-            }else{
-                return view('dashboard')->with('requests', $requests);
-            }            
+            return view('dashboard')->with('requests', $requests);
         }
-        
-        
     }
 }

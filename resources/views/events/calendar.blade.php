@@ -48,24 +48,25 @@
 
                     <script>
                         $(document).ready(function() {
-                            // page is now ready, initialize the calendar...
                             $('#calendar').fullCalendar({
                                 // put your options and callbacks here
                                 events : [
                                     @foreach($events as $event)
                                         @if($event->type == "party")
-                                            <?php $request = \App\Request::find($event->id); ?>
-                                            @if($request)
-                                                @if($request->status == 1)
-                                                {                            
-                                                    title : '{{ $event->name }}',
-                                                    start : '{{ $event->start_date }}T{{ $event->start_time }}',
-                                                    end : '{{ $event->end_date }}T{{ $event->end_time }}',
-                                                    color: '#fed586',
-                                                    textColor: '#434b56',
-                                                    url : '{{ 'event/view/'.$event->id }}'
-                                                },
-                                                @endif
+                                            <?php $request = DB::table('requests')->where('event_id', '=', $event->id)->get(); ?>
+                                            @if(sizeof($request) !== 0)
+                                                <?php foreach($request as $r){ ?>
+                                                    @if(isset($r->status) && $r->status == 1)
+                                                    {
+                                                        title : '{{ $event->name }}',
+                                                        start : '{{ $event->start_date }}T{{ $event->start_time }}',
+                                                        end : '{{ $event->end_date }}T{{ $event->end_time }}',
+                                                        color: '#fed586',
+                                                        textColor: '#434b56',
+                                                        url : '{{ 'event/view/'.$event->id }}'
+                                                    },
+                                                    @endif
+                                                <?php } ?>
                                             @else
                                                 {                            
                                                     title : '{{ $event->name }}',
