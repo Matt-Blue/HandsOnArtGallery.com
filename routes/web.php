@@ -13,7 +13,8 @@ Route::get('/logout_user', function(){
 
 // Default View
 Route::get('/', function () {
-    return view('welcome');
+    $items =  DB::table('items')->get();
+    return view('welcome')->with('items', $items);
 });
 
 // Gallery View

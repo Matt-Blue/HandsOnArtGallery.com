@@ -393,54 +393,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>16 x 20 Stretched Canvas</td>
-                                    <td>$30</td>
-                                </tr>
-                                <tr>
-                                    <td>11 x 14 Stretched Canvas</td>
-                                    <td>$25</td>
-                                </tr>
-                                <tr>
-                                    <td>8 x 10 Stretched Canvas</td>
-                                    <td>$20</td>
-                                </tr>
-                                <tr>
-                                    <td>Wood Signs / Designs</td>
-                                    <td>$30</td>
-                                </tr>														
-                                <tr>
-                                    <td>Wooden Clock</td>
-                                    <td>$40</td>
-                                </tr>														
-                                <tr>
-                                    <td>Wine Glass</td>
-                                    <td>$20</td>
-                                </tr>	
-                                <tr>
-                                    <td>Wine Glasses x 2</td>
-                                    <td>$30</td>
-                                </tr>
-                                <tr>
-                                    <td>Hardcover book (Primed)</td>
-                                    <td>$20</td>
-                                </tr>														
-                                <tr>
-                                    <td>Coconut (Primed)</td>
-                                    <td>$30</td>
-                                </tr>													
-                                <tr>
-                                    <td>Cape Coral Rock</td>
-                                    <td>$3</td>
-                                </tr>														
-                                <tr>
-                                    <td>Cape Coral Rocks x 4</td>
-                                    <td>$10</td>
-                                </tr>														
-                                <tr>
-                                    <td>Project Add-Ons</td>
-                                    <td>$10</td>
-                                </tr>													
+                                <?php foreach($items as $item){ ?>
+                                    <tr>
+                                        <td><?= $item->name ?></td>
+                                        <td><?= $item->price ?></td>
+                                    </tr>
+                                <?php } ?>                            
                             </tbody>
                         </table>
                     </div>
