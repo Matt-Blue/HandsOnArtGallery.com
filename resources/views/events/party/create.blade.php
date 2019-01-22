@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('max', 'Max Attendees') !!}
+                            {!! Form::label('max', 'Attendees (min 5)' !!}
                             {!! Form::number('max', Config::get('constants.max_attendees'), ['class' => 'form-control', 'required']) !!}
                         </div>
 

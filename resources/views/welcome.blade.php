@@ -44,12 +44,11 @@
                 <section>
                     <span class="icon fa-cubes major accent2"></span>
                     <h3>Workshops</h3>
-                    <p>
-                        Scheduled two-three hour time slot with a chosen theme dedicated to 
-                        instructing you with the artistic abilities needed to complete the project.
-                        Materials will be provided. 
-                        <br>See more for details.
-                    </p>
+                    <ul style="text-align: left;">
+                        <li>Scheduled on the <a href="{{ route('calendar') }}">calendar</a></li>
+                        <li>Each session 2-3 hours</li>
+                        <li>Materials included</li>
+                    </ul>
                     <a class="btn btn-primary" data-toggle="collapse" data-target="#workshops" 
                     href="#workshops" role="button" aria-expanded="false" aria-controls="workshops">
                     More
@@ -58,12 +57,12 @@
                 <section>
                     <span class="icon fa-calendar major accent4"></span>
                     <h3>Parties</h3>
-                    <p>
-                        Customized event with choice of project, date/time, refreshments and decorations.
-                        Fun, relaxed environment with guidance on completing a piece of art.
-                        Materials provided.
-                        <br>See more for details.
-                    </p>
+                    <ul style="text-align: left;">
+                        <li>Custom projects for large groups</li>
+                        <li>All ages welcome</li>
+                        <li>Adult beverages permissible for age appropriate parties</li>
+                        <li>Materials included</li>
+                    </ul>
                     <a class="btn btn-warning" data-toggle="collapse" data-target="#parties" 
                     href="#parties" role="button" aria-expanded="false" aria-controls="parties">
                     More
@@ -71,15 +70,13 @@
                 </section>
                 <section>
                     <span class="icon fa-paint-brush major accent3"></span>
-                    <h3>Walk-In Studio</h3>
-                    <p>
-                        Walk in the gallery during store hours and select an available item.
-                        Use of all supplies and studio time are included in the item cost.
-                        Assistance will be available.
-                        <br>See more for details.
-                    </p>
-                    <a class="btn btn-success" data-toggle="collapse" data-target="#studio" 
-                    href="#studio" role="button" aria-expanded="false" aria-controls="studio">
+                    <h3>Gallery</h3>
+                    <ul style="text-align: left;">
+                        <li>Real artwork for real people</li>
+                        <li>All work done by Lorna Bluestein, owner of Hands On</li>
+                        <li>All artwork is affordable</li>
+                    </ul>
+                    <a class="btn btn-success" href="http://www.handsonartwork.net/" target="_blank">
                     More
                     </a>
                 </section>
@@ -203,45 +200,6 @@
     </div>
 </div>
 
-<!-- Walk-In Studio -->
-<div class="collapse multi-collapse wrapper" id="studio">
-    <div class="inner">
-        <section class="main" style="background-color: #FCFCFC; border: 0.75rem solid #69c7ad;">
-            <div style="position: relative; display: inline-block;">
-                
-                <!-- Close Button -->
-                <a data-toggle="collapse" data-target="#studio" 
-                href="javascript:void(0);" role="button" aria-expanded="false" aria-controls="studio">
-                    <span style="position: absolute; top: 0; right: 0; font-size: 1.5rem;" class="fa fa-times"></span>
-                </a>
-
-                <header class="major">
-                    <h2>Walk-In Studio</h2><br>
-                </header>
-
-                <div class="row">
-                    <!-- Image -->
-                    <div class="3u 12u$(medium)">
-                        <section>
-                            <img src="{{ asset('images/events/studio.JPG') }}" alt="walk-in studio art" class="img-thumbnail" style="border: 0 none; box-shadow: none;">
-                        </section>
-                    </div>
-                    <!-- Content -->
-                    <div class="9u 12u$(medium)">
-                    <p>
-                            The store will be open to the public based on the hours shown in the <a href="{{ route('calendar') }}">calendar</a>.
-                            The fee will be the price of the item, and will include all supplies and studio time needed 
-                            to finish the project. There will be no instruction, but collaboration is welcomed and encouraged.  
-                            Walk-In Studio time is designed for DIY projects that require little to no assistance and who want to 
-                            work on their own art project.  Working during these hours can be a great time to develop 
-                            relationships with others in the community, while working on your chosen project. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
 <!-- Contact Information -->
 <div class="wrapper" id="info">
     <div class="inner">
@@ -277,65 +235,6 @@
         </section>
     </div>
 </div>
-
-<!-- Daily Specials -->
-<!-- <div class="wrapper" id="specials"> -->
-    <!-- <div class="inner"> -->
-        <!-- <section class="main accent3"> -->
-            <!-- Header -->
-            <!-- <header class="major"> -->
-                <!-- <h2>Daily Specials</h2> -->
-            <!-- </header> -->
-            <!-- <div class="row"> -->
-            <!-- <div class="col-md-8 col-md-offset-2"> -->
-                    <!-- <div class="table-wrapper" style="padding: 1rem; border: 1px solid white;"> -->
-                        <!-- <table> -->
-                            <!-- <thead> -->
-                                <!-- <tr> -->
-                                    <!-- <th>Day</th> -->
-                                    <!-- <th>Discount</th> -->
-                                <!-- </tr> -->
-                            <!-- </thead> -->
-                            <!-- <tbody> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Coconut Monday</td> -->
-                                    <!-- <td>$5 off Coconuts</td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Closed</td> -->
-                                    <!-- <td></td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Wine Glass Wednesday</td> -->
-                                    <!-- <td>2 for 1 Wine Glasses</td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Canvas Thursday</td> -->
-                                    <!-- <td>10% off Any Size Canvas</td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Fluid Painting Friday</td> -->
-                                    <!-- <td>10% off Any Size Fluid Painting</td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Wood Sign Saturday</td> -->
-                                    <!-- <td>20% off Any Size Wood Sign</td> -->
-                                <!-- </tr> -->
-                                <!-- <tr> -->
-                                    <!-- <td>Small Furniture Sunday</td> -->
-                                    <!-- <td>Paint Your Own Furniture 12 - 5pm</td> -->
-                                <!-- </tr> -->
-                            <!-- </tbody> -->
-                        <!-- </table> -->
-                    <!-- </div> -->
-                    <!-- <p class="major"> -->
-                        <!-- <center><b>Discounts may not be combined</b></center> -->
-                    <!-- </p> -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </section> -->
-    <!-- </div> -->
-<!-- </div> -->
 
 <!-- About the Owner -->
 <div class="wrapper" id="owner">

@@ -21,7 +21,8 @@
 
                     <div class="row" style="padding-top 5px;">
                         <div class="12u 12u$(medium)">
-                            <h2><header class="major">Open Tuesday through Saturday 12pm - 6pm</header></h2>
+                            <h2><header class="major">Open Monday and Wednesday - Saturday<br>12pm - 6pm</header></h2>
+                            <h4><header class="major">Closed Sunday, Tuesday</header></h4>
                         </div>
                     </div>
 
