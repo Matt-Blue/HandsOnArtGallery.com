@@ -177,7 +177,7 @@
 											<ul class="contact-icons">
 												<li class="icon fa-home">1625 SE 47th Terrace Cape Coral, FL 33904</li>
 												<li class="icon fa-phone">(239) 233-5662</li>
-												<li class="icon fa-envelope-o">Lorna@HandsOnArtGallery.com</li>
+												<li class="icon fa-envelope-o">HandsOnArtGalleryAndStudio@gmail.com</li>
 											</ul>
 											<br>
 											<ul class="contact-icons">

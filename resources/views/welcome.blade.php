@@ -113,26 +113,10 @@
                     <!-- Content -->
                     <div class="9u 12u$(medium)">
                         <p>
-                            Workshops are designed to offer customers the opportunity to create a 
-                            desired piece of art with instruction.
-                            A variety of scheduled workshops will be posted monthly on the website calendar. 
-                        </p>
-                        <p>
+                            A variety of scheduled workshops are posted monthly on the website calendar. 
                             Each workshop consists of a selected item and chosen subject during a 2-3 hour time slot. 
-                            The price for all workshops includes all the supplies needed to complete the project. 
-                            Set up and clean up will be provided, along with an apron to protect your clothing.  
-                            (It is still not recommended to wear nice clothes to these events.) 
-                        </p>
-                        <p>
-                            Instruction and <i>HANDS ON</i> guidance will be given throughout the workshop. 
-                            All participants will be given the same directions, but it is ok to add your own twist!  
-                            In fact, it is encouraged for you to express your individuality. 
-                            Workshops are open to all interested parties and it is a great way to 
-                            meet other creative people. 
-                        </p>
-                        <p>
-                            You can sign up for workshops online through this website. 
-                            Suggestions for specific workshops are always welcomed. 
+                            Price includes materials, instruction and cleanup.
+                            Signup for workshops by clicking on events found in the <a href="{{route('calendar')}}">calendar</a>.
                             Please arrive 15 minutes early so that the instruction can start on time. 
                         </p>
                     </div>
@@ -168,30 +152,23 @@
                     <!-- Content -->
                     <div class="9u 12u$(medium)">
                         <p>
-                            Private parties are closed to the public and allows customers to design their own personal 
-                            painting party. Scheduling a private party for a specific event, fundraiser or special occasion 
-                            gives you the freedom to choose your item, subject, guests and date & time of the event. 
-                        </p>
-                        <p>
-                            Decorations and refreshments are welcomed.  Wine or beer, along with snacks, are popular 
-                            for adult parties, but hard liquor is not permitted. Kids birthday parties are a hit, 
-                            and a cake and or other items are welcome to enhance the effect of your party. 
-                            Age appropriate instruction will be given and a variety of designs are available to choose from 
-                            for party themes. Set up, clean up, aprons and personal hands on directions will be given 
-                            during the party. Parties are priced by the item, per individual, which is all inclusive. 
-                        </p>
-                        <p>
+                            Parties are closed to the public and allows customers to design their own personal painting party. 
                             Parties must include 5 - 20 individuals.  
                             There is a 50% deposit required to book a party and no refunds will be given.
-                        </p>
-                        <p>
                             Off-site parties are available upon request and availability. 
-                            Party packages are available upon request. 
-                            All parties can be requested online through this website. 
+                            Parties can be requested by calling (239) 233-5662 or by emailing HandsOnArtGalleryAndStudio@gmail.com
+                            Materials, instruction, and cleanup included in the per person price.
+                            Arriving 15-30 minutes early will allow the project instruction to start on time.
                         </p>
                         <p>
-                            Special requests and suggestions are considered and welcomed. 
-                            Arriving 15-30 minutes early will allow the project instruction to start on time. 
+                            Kid parties are welcomed and as a former preschool teacher, Lorna has the skills to manage your kid's next art party!
+                            Instruction will be tailored to the age and skill level of all participants.
+                            Cake and other items are permitted during gatherings.
+                        </p>
+                        <p>
+                            Adult parties are also a great time, and much more flexible.
+                            Food and beverages are permitted, including alcohol (no hard liquor).
+                            Instruction for all skill levels is available and Lorna makes getting out of your comfort zone easy and fun!
                         </p>
                     </div>
                 </div>
