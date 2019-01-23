@@ -26,21 +26,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="3u 12u$(medium)">                    
-                            <p><header class="major">Parties can be scheduled any time depending on availability, off-site parties can be arranged</header></p>
-                        </div>
-                        <div class="3u 12u$(medium)">                    
-                            <p><header class="major">You can request a party by creating an account and accessing your <a href="{{ route('dashboard') }}">dashboard</a></header></p>
-                        </div>
-                        <div class="3u 12u$(medium)">
-                            <p><header class="major">Walk-In studio time will be closed if a private party is scheduled on the calendar</header></p>
-                        </div>
-                        <div class="3u 12u$(medium)">
-                            <p><header class="major">All workshops will be posted at least a week ahead of time on the calendar</header></p>
-                        </div>
-                    </div>
-
                     <br>
 
                     <!-- Calendar -->
