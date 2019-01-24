@@ -51,8 +51,16 @@ $attributes = get_attributes($event);
                         <br>
                         Price: cost of materials
                         <br>  
-                        @if(Auth::user())          
-                            <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                        @if(Auth::user())
+                            <?php
+                                if(DB::table('signups')
+                                ->where('user_id', '=', Auth::user()->id)
+                                ->where('event_id', '=', $attributes['id'])
+                                ->exists()){ echo "You have already signed up for this event."; }
+                                else {
+                            ?>
+                                <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                            <?php } ?>
                         @else
                             <a href="{{ route('login') }}">Login</a> to sign up for this event
                         @endif

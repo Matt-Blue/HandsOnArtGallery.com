@@ -38,43 +38,31 @@
                                 // put your options and callbacks here
                                 events : [
                                     @foreach($events as $event)
-                                        @if($event->type == "party")
-                                            <?php $request = DB::table('requests')->where('event_id', '=', $event->id)->get(); ?>
-                                            @if(sizeof($request) !== 0)
-                                                <?php foreach($request as $r){ ?>
-                                                    @if(isset($r->status) && $r->status == 1)
-                                                    {
-                                                        title : '{{ $event->name }}',
-                                                        start : '{{ $event->date }}T{{ $event->start_time }}',
-                                                        end : '{{ $event->date }}T{{ $event->end_time }}',
-                                                        color: '#fed586',
-                                                        textColor: '#434b56',
-                                                        url : '{{ 'event/view/'.$event->id }}'
-                                                    },
-                                                    @endif
-                                                <?php } ?>
-                                            @else
-                                                {                            
-                                                    title : '{{ $event->name }}',
-                                                    start : '{{ $event->date }}T{{ $event->start_time }}',
-                                                    end : '{{ $event->date }}T{{ $event->end_time }}',
-                                                    color: '#fed586',
-                                                    textColor: '#434b56',
-                                                    url : '{{ 'event/view/'.$event->id }}'
-                                                },
-                                            @endif
-                                        @else
+                                        @if($event->type == "party")                                            
+                                            {
+                                                title : '{{ $event->name }}',
+                                                start : '{{ $event->date }}T{{ $event->start_time }}',
+                                                end : '{{ $event->date }}T{{ $event->end_time }}',
+                                                color: '#fed586',
+                                                textColor: '#434b56',
+                                                url : '{{ 'event/view/'.$event->id }}'
+                                            },
+                                        @elseif($event->type == "workshop")
                                             {                            
                                                 title : '{{ $event->name }}',
                                                 start : '{{ $event->date }}T{{ $event->start_time }}',
                                                 end : '{{ $event->date }}T{{ $event->end_time }}',
-                                                @if($event->type == 'workshop')
-                                                    color: '#4cabb1',
-                                                @else
-                                                    color: '#79d1b8',
-                                                @endif
+                                                color: '#4cabb1',
                                                 textColor: '#434b56',
                                                 url : '{{ 'event/view/'.$event->id }}'
+                                            },
+                                        @else
+                                            {
+                                                title : 'Closed',
+                                                start : '{{ $event->date }}T{{ $event->start_time }}',
+                                                end : '{{ $event->date }}T{{ $event->end_time }}',
+                                                color: '#79d1b8',
+                                                textColor: '#434b56',
                                             },
                                         @endif
                                     @endforeach

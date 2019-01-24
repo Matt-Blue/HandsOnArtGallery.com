@@ -131,7 +131,8 @@
                                             Attending: <?php echo DB::table('signups')->where('event_id', $e->id)->count('user_id'); ?>
                                             <br>
                                             Price: cost of materials
-                                            <br>
+                                            <br><br>
+                                            <a href="{{ url('event/view/'.$e->id) }}"><button class="btn btn-success pull-center">View</button></a>
                                             <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a><br>
                                         <?php echo('<br><br></div>'); ?>
                         <?php }}}} ?>
