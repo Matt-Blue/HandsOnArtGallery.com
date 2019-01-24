@@ -40,7 +40,7 @@ class DashboardController extends Controller
         if(Auth::user()->email === \Config::get('constants.super_admin')){
             // all signups after current date for admin use
             $signups = array();
-            $events = DB::table('events')->where('start_date', '>=', date("Y-m-d"))->get();
+            $events = DB::table('events')->where('date', '>=', date("Y-m-d"))->get();
             foreach($events as $e){
                 $signup = DB::table('signups')->where('event_id', '=', $e->id)->get();
                 foreach($signup as $s){

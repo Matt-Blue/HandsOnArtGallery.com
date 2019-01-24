@@ -133,21 +133,13 @@
                                     <li><a href="/#services">Services</a></li>
 									<li><a href="{{ route('calendar') }}">Hours & Calendar</a></li>
 
-									<!-- ALL -->
-									@if (Auth::user())
-                                        <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                                    @endif
-
-                                    <!-- USERS -->
-                                    @if(Auth::user() && !(Auth::user()->email === Config::get('constants.super_admin')))
-                                        <li><a href="{{ url('/party/new') }}">Request Party</a></li> 
-                                    @endif
-
-									<!-- Authentication Links -->
+									<!-- Guests -->
                                     @if (Auth::guest())
                                         <li><a href="{{ route('login') }}">Login</a></li>
                                         <li><a href="{{ route('register') }}">Register</a></li>
+									<!-- Users -->
                                     @else
+                                        <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                                         <li class="dropdown">
 										<a href="{{ route('logout_user') }}">
 											Logout

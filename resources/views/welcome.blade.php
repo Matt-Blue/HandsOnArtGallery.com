@@ -25,10 +25,16 @@
             <img src="{{ asset('images/slideshow/lorna-wave.jpg') }}" alt="lorna bluestein wave painting" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/solo-artist.jpg') }}" alt="solo artist" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/group.jpg') }}" alt="group art" data-position="bottom right" />
         </article>
         <article>
-            <img src="{{ asset('images/slideshow/group.jpg') }}" alt="group art" data-position="bottom right" />
+            <img src="{{ asset('images/slideshow/kid-group.jpg') }}" alt="group art" data-position="bottom right" />
+        </article>
+        <article>
+            <img src="{{ asset('images/slideshow/kid-portrait.jpg') }}" alt="group art" data-position="bottom right" />
+        </article>
+        <article>
+            <img src="{{ asset('images/slideshow/solo-artist.jpg') }}" alt="solo artist" data-position="bottom right" />
         </article>
     </div>
 </section>
@@ -46,7 +52,7 @@
                     <h3>Workshops</h3>
                     <ul style="text-align: left;">
                         <li>Scheduled on the <a href="{{ route('calendar') }}">calendar</a></li>
-                        <li>Each session 2-3 hours</li>
+                        <li>2-3 hour sessions</li>
                         <li>Materials included</li>
                     </ul>
                     <a class="btn btn-primary" data-toggle="collapse" data-target="#workshops" 
@@ -58,10 +64,10 @@
                     <span class="icon fa-calendar major accent4"></span>
                     <h3>Parties</h3>
                     <ul style="text-align: left;">
-                        <li>Custom projects for large groups</li>
+                        <li>Custom projects</li>
                         <li>All ages welcome</li>
-                        <li>Adult beverages permissible for age appropriate parties</li>
                         <li>Materials included</li>
+                        <li>Adult beverages permissible</li>
                     </ul>
                     <a class="btn btn-warning" data-toggle="collapse" data-target="#parties" 
                     href="#parties" role="button" aria-expanded="false" aria-controls="parties">
@@ -72,9 +78,9 @@
                     <span class="icon fa-paint-brush major accent3"></span>
                     <h3>Gallery</h3>
                     <ul style="text-align: left;">
-                        <li>Real artwork for real people</li>
-                        <li>All work done by Lorna Bluestein, owner of Hands On</li>
-                        <li>All artwork is affordable</li>
+                        <li>Original artwork</li>
+                        <li>Affordably priced</li>
+                        <li>All work done by the owner</li>
                     </ul>
                     <a class="btn btn-success" href="http://www.handsonartwork.net/" target="_blank">
                     More

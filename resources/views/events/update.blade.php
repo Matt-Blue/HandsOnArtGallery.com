@@ -59,8 +59,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('start_date', 'Start Date') !!}
-                            {!! Form::date('start_date', $attributes['start_date'], ['class' => 'date']) !!}
+                            {!! Form::label('date', 'Date') !!}
+                            {!! Form::date('date', $attributes['date'], ['class' => 'date']) !!}
                         </div>
 
                         <div class="form-group">
@@ -69,23 +69,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('end_date', 'End Date') !!}
-                            {!! Form::date('end_date', $attributes['end_date'], ['class' => 'date']) !!}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::label('end_time', 'End Time') !!}
                             {!! Form::text('end_time', $attributes['end_time'], ['id' => 'timepicker_end', 'autocomplete' => 'off']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('price', 'Price') !!}
-                            {!! Form::number('price', $attributes['price'], ['class' => 'form-control', 'step' => 'any'], array('required' => 'required')) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('max', 'Max Attendees') !!}
-                            {!! Form::number('max', $attributes['max'], ['class' => 'form-control'], ['min'=>1]) !!}
                         </div>
 
                         {!! Form::hidden('id', $attributes['id']) !!}

@@ -29,10 +29,6 @@ class EventsController extends Controller
         $event = new \App\Event;
         $this->Save($event, $attributes);
 
-        if($attributes['type'] == "party" && !(Auth::user()->email === \Config::get('constants.super_admin'))){
-            $event_id = $event->id;
-            return redirect('party/request/'.$event_id);
-        }
         return redirect()->route('calendar');
 
     }
@@ -96,11 +92,8 @@ class EventsController extends Controller
         $event->name = $attributes['name'];
         $event->description = $attributes['description'];
         $event->type = $attributes['type'];
-        $event->price = $attributes['price'];
-        $event->max = $attributes['max'];
-        $event->start_date = $attributes['start_date'];
+        $event->date = $attributes['date'];
         $event->start_time = $attributes['start_time'];
-        $event->end_date = $attributes['end_date'];
         $event->end_time = $attributes['end_time'];
         $event->image = $attributes['image'];
         $event->save();
@@ -116,7 +109,7 @@ class EventsController extends Controller
         $this->validate($request, [
             'name' => 'required|min:5',
             'description' => 'required|min:5',
-            'start_date' => 'required',
+            'date' => 'required',
             'start_time' => 'required',
             'end_time' => 'required'
         ]);
@@ -129,11 +122,9 @@ class EventsController extends Controller
         if(!$request->get('description')){ redirect()->back(); }
         else{ $description = $request->get('description'); }
 
-        // START AND END DATE VALIDATION
-        if(!$request->get('start_date')){ $start_date = date("Y-m-d"); }
-        else{ $start_date = $request->get('start_date'); }
-        if(!$request->get('end_date')){ $end_date = $start_date; }
-        else{ $end_date = $request->get('end_date'); }
+        // DATE VALIDATION
+        if(!$request->get('date')){ $date = date("Y-m-d"); }
+        else{ $date = $request->get('date'); }
 
         // START AND END TIME VALIDATION
         if(!$request->get('start_time')){ $start_time = "00:00:00"; }
@@ -157,14 +148,6 @@ class EventsController extends Controller
         if(!$request->get('type')){ $type = "studio"; }
         else{ $type = $request->get('type'); }
 
-        // PRICE VALIDATION
-        if(!$request->get('price')){ $price = 0; }
-        else{ $price = $request->get('price'); }
-
-        // MAX VALIDATION
-        if(!$request->get('max')){ $max = \Config::get('constants.max_attendees'); }
-        else{ $max = $request->get('max'); }
-
         // Upload photo & add slug to attributes object
         if($request->file('image')){
             $file = $request->file('image');
@@ -181,13 +164,10 @@ class EventsController extends Controller
         $attributes = array(
             'name' => $name, 
             'description' => $description, 
-            'start_date' => $start_date, 
+            'date' => $date, 
             'start_time' => $start_time,
-            'end_date' => $end_date, 
             'end_time' => $end_time,
             'type' => $type,
-            'price' => $price,
-            'max' => $max,
             'image' => $file_name
         );
         return $attributes;

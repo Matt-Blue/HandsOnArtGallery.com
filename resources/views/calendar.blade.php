@@ -45,8 +45,8 @@
                                                     @if(isset($r->status) && $r->status == 1)
                                                     {
                                                         title : '{{ $event->name }}',
-                                                        start : '{{ $event->start_date }}T{{ $event->start_time }}',
-                                                        end : '{{ $event->end_date }}T{{ $event->end_time }}',
+                                                        start : '{{ $event->date }}T{{ $event->start_time }}',
+                                                        end : '{{ $event->date }}T{{ $event->end_time }}',
                                                         color: '#fed586',
                                                         textColor: '#434b56',
                                                         url : '{{ 'event/view/'.$event->id }}'
@@ -56,8 +56,8 @@
                                             @else
                                                 {                            
                                                     title : '{{ $event->name }}',
-                                                    start : '{{ $event->start_date }}T{{ $event->start_time }}',
-                                                    end : '{{ $event->end_date }}T{{ $event->end_time }}',
+                                                    start : '{{ $event->date }}T{{ $event->start_time }}',
+                                                    end : '{{ $event->date }}T{{ $event->end_time }}',
                                                     color: '#fed586',
                                                     textColor: '#434b56',
                                                     url : '{{ 'event/view/'.$event->id }}'
@@ -66,8 +66,8 @@
                                         @else
                                             {                            
                                                 title : '{{ $event->name }}',
-                                                start : '{{ $event->start_date }}T{{ $event->start_time }}',
-                                                end : '{{ $event->end_date }}T{{ $event->end_time }}',
+                                                start : '{{ $event->date }}T{{ $event->start_time }}',
+                                                end : '{{ $event->date }}T{{ $event->end_time }}',
                                                 @if($event->type == 'workshop')
                                                     color: '#4cabb1',
                                                 @else

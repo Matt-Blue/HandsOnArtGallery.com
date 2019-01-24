@@ -88,9 +88,6 @@ class SignupController extends Controller
         ->where('user_id', '=', Auth::user()->id)
         ->where('event_id', '=', $event_id)
         ->exists()){ return "You have already signed up for this event."; }
-        elseif(DB::table('signups')->where('event_id', $event_id)->count('user_id') >= get_attributes(DB::table('events')->where('id', $event_id)->get())['max']){
-            return "Max attendees already hit.";
-        }
         else return "valid";
         
         return $valid;

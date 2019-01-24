@@ -47,9 +47,9 @@
                         <div class="form-group">
                             {!! Form::label('type', 'Type') !!}
                             {!! Form::select('type', [
-                                'open' => 'Walk-In Studio',
                                 'workshop' => 'Workshop',
-                                'party' => 'Party'
+                                'party' => 'Party',
+                                'closed' => 'Closed'
                             ], 0) !!}
                         </div>
 
@@ -60,8 +60,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('start_date', 'Date') !!}
-                            {!! Form::date('start_date', NULL, ['class' => 'date']) !!}
+                            {!! Form::label('date', 'Date') !!}
+                            {!! Form::date('date', NULL, ['class' => 'date']) !!}
                         </div>
 
                         <div class="form-group">
@@ -69,25 +69,16 @@
                             {!! Form::text('start_time', NULL, ['id' => 'timepicker_start', 'autocomplete' => 'off']) !!}
                         </div>
 
-                        <!-- <div class="form-group">
-                            {!! Form::label('end_date', 'End Date') !!}
-                            {!! Form::date('end_date', NULL, ['class' => 'date']) !!}
-                        </div> -->
-
                         <div class="form-group">
                             {!! Form::label('end_time', 'End Time') !!}
                             {!! Form::text('end_time', NULL, ['id' => 'timepicker_end', 'autocomplete' => 'off']) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!! Form::label('price', 'Price') !!}
-                            {!! Form::number('price', 0, ['class' => 'form-control', 'step' => 'any']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('max', 'Max Attendees') !!}
-                            {!! Form::number('max', Config::get('constants.max_attendees'), ['class' => 'form-control']) !!}
-                        </div>
+                        <!-- 
+                            TODO 
+                            select item to be painted based on what is in the database
+                            can be no item (not required)
+                        -->
 
                         {!! Form::submit('Create', ['class' => 'btn btn-primary pull-right']) !!}
 

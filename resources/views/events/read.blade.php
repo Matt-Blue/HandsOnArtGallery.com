@@ -40,33 +40,22 @@ $attributes = get_attributes($event);
                             ?>
                         <br>
                         Start: 
-                            <?=formatDate($attributes['start_date'])?>                 
+                            <?=formatDate($attributes['date'])?>                  
                             at <?=formatTime($attributes['start_time'])?>
                         <br>
                         End:   
-                            <?=formatDate($attributes['end_date'])?> 
+                            <?=formatDate($attributes['date'])?> 
                             at <?=formatTime($attributes['end_time'])?>
                         <br>
-                        <?php if($attributes['type'] !== "party"){ ?>
-                            Max Attendees: <?=$attributes['max'];?>
-                            <br>
-                            Attending: <?php echo DB::table('signups')->where('event_id', $attributes['id'])->count('user_id'); ?>
-                            <br>
-                            <!-- Price  -->
-                                <?php 
-                                    switch($attributes['type']){
-                                        case "open": echo "Price: Cost of Materials<br>"; break;
-                                        case "workshop": echo "Price: $" . $attributes['price'] . " per person<br>"; break;
-                                        case "party": echo "<br>"; break;
-                                    }
-                                ?>
-                            <br>  
-                            @if(Auth::user())          
-                                <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
-                            @else
-                                <a href="{{ route('login') }}">Login</a> to sign up for this event
-                            @endif
-                        <?php } ?>
+                        Attending: <?php echo DB::table('signups')->where('event_id', $attributes['id'])->count('user_id'); ?>
+                        <br>
+                        Price: cost of materials
+                        <br>  
+                        @if(Auth::user())          
+                            <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                        @else
+                            <a href="{{ route('login') }}">Login</a> to sign up for this event
+                        @endif
                         <br>
                         <a href="{{ route('calendar') }}"><button class="btn btn-default pull-center">Back to Calendar</button></a>
                     </div>
