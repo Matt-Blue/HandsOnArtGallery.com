@@ -40,12 +40,8 @@ class EventsController extends Controller
     public function Read($id){
 
         $event =  DB::table('events')->where('id', '=', $id)->get();
-        if(Auth::user()){
-            if(Auth::user()->email === \Config::get('constants.super_admin')){
-                return view('events/update', compact('event'));
-            }else{
-                return view('events/read', compact('event'));
-            } 
+        if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin')){
+            return view('events/update', compact('event'));
         }else{
             return view('events/read', compact('event'));
         }
@@ -95,6 +91,7 @@ class EventsController extends Controller
         $event->date = $attributes['date'];
         $event->start_time = $attributes['start_time'];
         $event->end_time = $attributes['end_time'];
+        $event->price = $attributes['price'];
         $event->image = $attributes['image'];
         $event->save();
 
@@ -148,6 +145,10 @@ class EventsController extends Controller
         if(!$request->get('type')){ $type = "studio"; }
         else{ $type = $request->get('type'); }
 
+        // PRICE VALIDATION
+        if(!$request->get('price')){ $price = NULL; }
+        else{ $price = $request->get('price'); }
+
         // Upload photo & add slug to attributes object
         if($request->file('image')){
             $file = $request->file('image');
@@ -168,6 +169,7 @@ class EventsController extends Controller
             'start_time' => $start_time,
             'end_time' => $end_time,
             'type' => $type,
+            'price' => $price,
             'image' => $file_name
         );
         return $attributes;

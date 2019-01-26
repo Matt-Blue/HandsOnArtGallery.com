@@ -49,7 +49,8 @@ $attributes = get_attributes($event);
                         <br>
                         Attending: <?php echo DB::table('signups')->where('event_id', $attributes['id'])->count('user_id'); ?>
                         <br>
-                        Price: cost of materials
+                        <?php if($attributes['price'] != NULL){ echo("Price: $" . $attributes['price']); }
+                        else{ echo("Price: cost of materials"); }?>                        
                         <br>  
                         @if(Auth::user())
                             <?php

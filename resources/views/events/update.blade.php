@@ -73,6 +73,11 @@
                             {!! Form::text('end_time', $attributes['end_time'], ['id' => 'timepicker_end', 'autocomplete' => 'off']) !!}
                         </div>
 
+                        <div class="form-group">
+                            {!! Form::label('price', 'Price') !!}
+                            {!! Form::number('price', $attributes['price']) !!}
+                        </div>
+
                         {!! Form::hidden('id', $attributes['id']) !!}
                         {!! Form::hidden('image', $attributes['image']) !!}
                         {!! Form::submit('Update', ['class' => 'btn btn-primary pull-right']) !!}

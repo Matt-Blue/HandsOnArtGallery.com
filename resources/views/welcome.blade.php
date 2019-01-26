@@ -7,7 +7,7 @@
     <div class="items">
         <section class="accent2">
             <h1>Artistic Services</h1>
-            <p>Workshops, Parties and Walk-In Studio</p>
+            <p>Workshops, Parties and Gallery</p>
             <ul class="actions">
                 <li><a href="{{ url('/#services') }}" class="button special">What We Offer</a></li>
             </ul>
@@ -159,7 +159,7 @@
                     <div class="9u 12u$(medium)">
                         <p>
                             Parties are closed to the public and allows customers to design their own personal painting party. 
-                            Parties must include 5 - 20 individuals.  
+                            Parties must include 5 - 30 individuals.  
                             There is a 50% deposit required to book a party and no refunds will be given.
                             Off-site parties are available upon request and availability. 
                             Parties can be requested by calling (239) 233-5662 or by emailing HandsOnArtGalleryAndStudio@gmail.com

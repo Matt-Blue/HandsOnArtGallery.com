@@ -10,6 +10,7 @@ function get_attributes($event){
         $date = $event->date;
         $start_time = $event->start_time;
         $end_time = $event->end_time;
+        $price = $event->price;
         $image = $event->image;
     }
     return array(
@@ -20,6 +21,7 @@ function get_attributes($event){
         "date" => $date,
         "start_time" => $start_time,
         "end_time" => $end_time,
+        "price" => $price,
         "image" => $image,
     );
 }

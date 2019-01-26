@@ -74,11 +74,10 @@
                             {!! Form::text('end_time', NULL, ['id' => 'timepicker_end', 'autocomplete' => 'off']) !!}
                         </div>
 
-                        <!-- 
-                            TODO 
-                            select item to be painted based on what is in the database
-                            can be no item (not required)
-                        -->
+                        <div class="form-group">
+                            {!! Form::label('price', 'Price') !!}
+                            {!! Form::number('price', 30) !!}
+                        </div>
 
                         {!! Form::submit('Create', ['class' => 'btn btn-primary pull-right']) !!}
 
