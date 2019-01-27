@@ -71,3 +71,5 @@ Route::get('/signup/cancel/{id}', 'SignupController@Delete');                   
 /////////////
 
 // PAY
+Route::post('/pay/{id}', 'PaymentsController@Pay');                             //pay for event
+Route::get('/pay/view/{id}', function () { return view('payments.create'); });  //view to confirm paying for event

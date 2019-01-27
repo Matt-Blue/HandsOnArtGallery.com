@@ -130,10 +130,13 @@
                                             <br>
                                             Attending: <?php echo DB::table('signups')->where('event_id', $e->id)->count('user_id'); ?>
                                             <br>
-                                            Price: cost of materials
+                                            <?php if($e->price != NULL){ echo("Price: $" . $e->price); }
+                                            else{ echo("Price: cost of materials"); }?>   
                                             <br><br>
-                                            <a href="{{ url('event/view/'.$e->id) }}"><button class="btn btn-success pull-center">View</button></a>
-                                            <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a><br>
+                                            <a href="{{ url('event/view/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
+                                            <a href="{{ url('pay/view/'.$e->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
+                                            <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a>
+                                            <br>
                                         <?php echo('<br><br></div>'); ?>
                         <?php }}}} ?>
                         <br><br>                        
