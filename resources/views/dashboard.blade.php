@@ -14,7 +14,7 @@
                     <div class="col-md-12 text-center">
                         <h1>Admin Panel</h1>
                     </div>
-                </div>    
+                </div>
                 <!-- Buttons -->
                 <div class="row">
                     <div class="col-md-4 text-center">
@@ -33,11 +33,46 @@
 </div>
 <hr>
 
-<!-- ALL SIGNUPS -->
+<!-- ALL RECEIPTS -->
 <div class="container-fluid" id="requests">
     <div class="wrapper" id="info">
         <div class="inner">
             <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Receipts</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><!-- READ RECEIPTS -->
+                        <?php 
+                        if(!isset($receipts) || sizeof($receipts) === 0){ ?>
+                            <div class="text-center">                            
+                                There are no receipts as of 3 weeks ago<br><br>                                
+                            </div>
+                        <?php } else { 
+                            foreach($receipts as $r){ 
+                                $event =  DB::table('events')->where('id', '=', $r->event_id)->get();
+                                $user =  DB::table('users')->where('id', '=', $r->user_id)->get();
+                                ?>
+                                <div class="col-md-4 text-left">
+                                    <?php foreach($event as $e){ ?>
+                                        Event Name: <?=$e->name?><br>
+                                        Event Date: <?=formatDate($e->date)?><br>
+                                        Event Price: $<?=$e->price?><br>
+                                    <?php } ?>
+                                    <?php foreach($user as $u){ ?>
+                                        User: <?=$u->name?><br>
+                                        Email: <?=$u->email?><br>
+                                    <?php } ?>
+                                    Time of purchase: <?=formatDate($r->created_at)?> at <?=formatTime($r->created_at)?><br><br><br>
+                                </div>
+                            <?php }
+                        } ?>
+                        
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h1>Upcoming Signups</h1>
@@ -134,14 +169,28 @@
                                             else{ echo("Price: cost of materials"); }?>   
                                             <br><br>
                                             <a href="{{ url('event/view/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
-                                            <a href="{{ url('pay/view/'.$e->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
+                                            
+                                            <?php 
+                                                $user_id = Auth::user()->id;
+                                                $receipt =  DB::table('receipts')->where([
+                                                    ['event_id', '=', $e->id],
+                                                    ['user_id', '=', $user_id]
+                                                ])->get();
+                                                if(sizeof($receipt) != 0){
+                                            ?>
+                                                <a href="{{ url('receipt/'.$e->id) }}"><button class="btn btn-default pull-center">Receipt</button></a>
+                                            <?php
+                                                }else{
+                                            ?>
+                                                <a href="{{ url('pay/'.$e->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
+                                            <?php } ?>
                                             <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a>
                                             <br>
                                         <?php echo('<br><br></div>'); ?>
                         <?php }}}} ?>
                         <br><br>                        
                     </div>
-                </div> 
+                </div>
             </section>
         </div>
     </div>  

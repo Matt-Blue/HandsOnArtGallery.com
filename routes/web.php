@@ -71,5 +71,8 @@ Route::get('/signup/cancel/{id}', 'SignupController@Delete');                   
 /////////////
 
 // PAY
-Route::post('/pay/{id}', 'PaymentsController@Pay');                             //pay for event
-Route::get('/pay/view/{id}', function () { return view('payments.create'); });  //view to confirm paying for event
+Route::get('/pay/{id}', 'PaymentsController@Checkout')->name('checkout');         //pay for event (view form)
+Route::post('/charge/{event_id}', 'PaymentsController@Charge')->name('charge');   //pay for event (action)
+
+// RECEIPT
+Route::get('/receipt/{event_id}', 'PaymentsController@Receipt')->name('receipt');//pay for event (view receipt)

@@ -53,13 +53,19 @@ class DashboardController extends Controller
                 $signups =  DB::table('signups')->where('user_id', '=', Auth::user()->id)->get();
             }
         }
-        
+
+        // get receipts
+        if(Auth::user()->email === \Config::get('constants.super_admin')){
+            $receipts =  DB::table('receipts')->where('created_at', '>=', time()-(21 * 24 * 60 * 60))->get();
+        }else{
+            $receipts =  DB::table('receipts')->where('user_id', '=', Auth::user()->id)->get();
+        }
 
         if(isset($signups)){
-            return view('dashboard')->with('requests', $requests)->with('signups', $signups);
+            return view('dashboard')->with('requests', $requests)->with('signups', $signups)->with('receipts', $receipts);
         }else{
             // return view without signups
-            return view('dashboard')->with('requests', $requests);
+            return view('dashboard')->with('requests', $requests)->with('receipts', $receipts);
         }
     }
 }

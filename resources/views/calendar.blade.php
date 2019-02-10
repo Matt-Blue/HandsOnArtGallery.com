@@ -63,6 +63,9 @@
                                                 end : '{{ $event->date }}T{{ $event->end_time }}',
                                                 color: '#79d1b8',
                                                 textColor: '#434b56',
+                                                @if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin'))
+                                                    url : '{{ 'event/view/'.$event->id }}'
+                                                @endif
                                             },
                                         @endif
                                     @endforeach
