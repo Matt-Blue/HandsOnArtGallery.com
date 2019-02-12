@@ -11,11 +11,9 @@
     <div class="row">
         <div class="wrapper" id="info">
             <div class="inner">
-                <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
+                <section class="main" style="background-color: #FCFCFC">
 
-                    <h1 class="text-center">Hours & Calendar</h1>
-
-                    <br>
+                    <h1 class="text-center">Hours & Calendar</h1><br>
 
                     <!-- Hours -->
 
@@ -24,12 +22,9 @@
                             <h2><header class="major">Open Monday and Wednesday - Saturday<br>12pm - 6pm</header></h2>
                             <h4><header class="major">Closed Sunday, Tuesday</header></h4>
                         </div>
-                    </div>
-
-                    <br>
+                    </div><br>
 
                     <!-- Calendar -->
-
                     <div id='calendar'></div>
 
                     <script>

@@ -178,7 +178,7 @@
                                                 ])->get();
                                                 if(sizeof($receipt) != 0){
                                             ?>
-                                                <a href="{{ url('receipt/'.$e->id) }}"><button class="btn btn-default pull-center">Receipt</button></a>
+                                                <a href="{{ url('event/'.$e->id) }}"><button class="btn btn-default pull-center">Receipt</button></a>
                                             <?php
                                                 }else{
                                             ?>

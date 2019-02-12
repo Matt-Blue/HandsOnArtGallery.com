@@ -26,13 +26,11 @@
                         Description: <?=$event->description?>
                         <br>
                         Event Type: 
-                            <?php 
-                                switch($event->type){
+                            <?php switch($event->type){
                                     case "open": echo "Walk-In Studio"; break;
                                     case "workshop": echo "Workshop"; break;
                                     case "party": echo "Party"; break;
-                                }
-                            ?>
+                            } ?>
                         <br>
                         Start: 
                             <?=formatDate($event->date)?>                  
@@ -42,26 +40,55 @@
                             <?=formatDate($event->date)?> 
                             at <?=formatTime($event->end_time)?>
                         <br>
-                        Attending: <?php echo DB::table('signups')->where('event_id', $event->id)->count('user_id'); ?>
+                        Number Attending: <?php echo DB::table('signups')->where('event_id', $event->id)->count('user_id'); ?>
                         <br>
                         <?php if($event->price != NULL){ echo("Price: $" . $event->price); }
                         else{ echo("Price: cost of materials"); }?>                        
                         <br>  
+
                         @if(Auth::user())
+
+                            <!-- Check for signup -->
                             <?php
                                 if(DB::table('signups')
                                 ->where('user_id', '=', Auth::user()->id)
                                 ->where('event_id', '=', $event->id)
-                                ->exists()){ echo "You have already signed up for this event."; }
+                                ->exists()){
+                                    $signed_up = true;
+                                    echo "You have already signed up for this event.<br>";
+                                }
                                 else {
+                                    $signed_up = false;
                             ?>
                                 <a href="{{ url('signup/'.$event->id) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
                             <?php } ?>
+
+                            <!-- Check for payment -->
+                            <?php 
+                            $user_id = Auth::user()->id;
+                            $receipt =  DB::table('receipts')->where([
+                                ['event_id', '=', $event->id],
+                                ['user_id', '=', $user_id]
+                            ])->get();
+                            if(sizeof($receipt) != 0){
+                                $user = DB::table('users')->where('id', '=', $user_id)->first();
+                                foreach($receipt as $r){ ?>
+                                    <br>Receipt
+                                    <br>User: {{$user->name}}
+                                    <br>Email: {{$user->email}}
+                                    <br>Time purchased: {{$r->created_at}}
+                                <?php }
+                            }elseif($signed_up){?>
+                                <div class="row">No record of purchase</div>
+                                <a href="{{ url('pay/'.$event->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
+                            <?php } ?>
+
                         @else
                             <a href="{{ route('login') }}">Login</a> to sign up for this event
                         @endif
-                        <br>
-                        <a href="{{ route('calendar') }}"><button class="btn btn-default pull-center">Back to Calendar</button></a>
+                        <br><br>
+                        <a href="{{ route('calendar') }}"><button class="btn btn-warning pull-center">Calendar</button></a>
+                        <a href="{{ route('dashboard') }}"><button class="btn btn-primary pull-center">Dashboard</button></a>
                     </div>
                 </div>   
             </section>
