@@ -13,6 +13,14 @@ use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
+
+    public function UpdateView($id){
+        $events =  DB::table('events')->where('id', '=', $id)->get();
+        return view('events/event')->with('event', $events[0])->with('update', true);
+    }
+    public function CreateView(){
+        return view('events/event')->with('update', false);
+    }
     
     /////////////////////////////////
     ///////////EVENT CRUD////////////
@@ -27,7 +35,8 @@ class EventsController extends Controller
     public function Read($id){
         $event =  DB::table('events')->where('id', '=', $id)->get();
         if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin')){
-            return view('events/update', compact('event'));
+            // return view('events/update', compact('event'));
+            return view('events/event', compact('event'));
         }else{
             return view('events/read', compact('event'));
         }
@@ -118,7 +127,7 @@ class EventsController extends Controller
         $event->image = $file_name;
         $event->save();
     }
-    
+
     ///////////////////////////////////
     /////CONVERT TIME TO 24 HOUR///////
     ///////////////////////////////////

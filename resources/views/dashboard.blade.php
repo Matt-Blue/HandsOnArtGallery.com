@@ -21,7 +21,7 @@
                         <center><a href="{{ route('calendar') }}"><button class="btn btn-primary pull-center">Manage Events</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
-                        <center><a href="{{ url('/event/new') }}"><button class="btn btn-success pull-center">Create Event</button></a></center>
+                        <center><a href="{{ url('/event') }}"><button class="btn btn-success pull-center">Create Event</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
                         <center><a href="#requests"><button class="btn btn-warning pull-center">Party Requests</button></a></center>

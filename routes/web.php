@@ -38,7 +38,8 @@ Route::get('/gallery', function () { return view('gallery.gallery'); })->name('g
 //////////////////
 
 // VIEWS
-
+Route::get('/event', 'EventsController@CreateView')->name('create_event_view');              //create & update view
+Route::get('/event/{id}', 'EventsController@UpdateView')->name('update_event_view');         //create & update view
 
 // CREATE
 Route::get('/event/new', function () { return view('events.create'); });        //create new event view
