@@ -33,23 +33,18 @@ Route::get('/calendar', function() {
 // Gallery View
 Route::get('/gallery', function () { return view('gallery.gallery'); })->name('gallery');
 
-//////////////////
-// Events CRUD  //
-//////////////////
-
-// VIEWS
-Route::get('/event', 'EventsController@CreateView')->name('create_event_view');              //create & update view
-Route::get('/event/{id}', 'EventsController@UpdateView')->name('update_event_view');         //create & update view
-
-// CREATE
-Route::get('/event/new', function () { return view('events.create'); });        //create new event view
-Route::post('/event/create', 'EventsController@Create')->name('create');        //create new event
+/////////////
+// Events  //
+/////////////
 
 // READ
-Route::get('/event/view/{id}', 'EventsController@Read')->name('read');          //single event view
+Route::get('/event', 'EventsController@CreateView')->name('create_event_view');              //create & update view
+Route::get('/event/{id}', 'EventsController@Read')->name('read_event');         //create & update view
+
+// CREATE
+Route::post('/event/create', 'EventsController@Create')->name('create');        //create new event
 
 // UPDATE
-Route::get('/event/update', function () { return view('events.update'); });     //update event view
 Route::post('/event/update/{id}', 'EventsController@Update')->name('update');   //update event
 
 // DELETE

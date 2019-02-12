@@ -45,7 +45,7 @@
                                                 end : '{{ $event->date }}T{{ $event->end_time }}',
                                                 color: '#fed586',
                                                 textColor: '#434b56',
-                                                url : '{{ 'event/view/'.$event->id }}'
+                                                url : '{{ 'event/'.$event->id }}'
                                             },
                                         @elseif($event->type == "workshop")
                                             {                            
@@ -54,7 +54,7 @@
                                                 end : '{{ $event->date }}T{{ $event->end_time }}',
                                                 color: '#4cabb1',
                                                 textColor: '#434b56',
-                                                url : '{{ 'event/view/'.$event->id }}'
+                                                url : '{{ 'event/'.$event->id }}'
                                             },
                                         @else
                                             {
@@ -64,7 +64,7 @@
                                                 color: '#79d1b8',
                                                 textColor: '#434b56',
                                                 @if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin'))
-                                                    url : '{{ 'event/view/'.$event->id }}'
+                                                    url : '{{ 'event/'.$event->id }}'
                                                 @endif
                                             },
                                         @endif

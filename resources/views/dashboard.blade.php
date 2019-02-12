@@ -168,7 +168,7 @@
                                             <?php if($e->price != NULL){ echo("Price: $" . $e->price); }
                                             else{ echo("Price: cost of materials"); }?>   
                                             <br><br>
-                                            <a href="{{ url('event/view/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
+                                            <a href="{{ url('event/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
                                             
                                             <?php 
                                                 $user_id = Auth::user()->id;

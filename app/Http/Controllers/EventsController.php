@@ -12,41 +12,40 @@ use App\Http\Requests\ContactFormRequest;//used for creating tasks
 use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
-{
-
-    public function UpdateView($id){
-        $events =  DB::table('events')->where('id', '=', $id)->get();
-        return view('events/event')->with('event', $events[0])->with('update', true);
-    }
-    public function CreateView(){
-        return view('events/event')->with('update', false);
-    }
+{    
     
     /////////////////////////////////
     ///////////EVENT CRUD////////////
     /////////////////////////////////
 
+    // READ
+    public function Read($id){
+        $events =  DB::table('events')->where('id', '=', $id)->get();
+        if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin')){
+            return view('events/event')->with('event', $events[0])->with('update', true);
+        }else{
+            return view('events/read')->with('event', $events[0]);
+        }
+    }
+    public function CreateView(){
+        return view('events/event')->with('update', false);
+    }
+
+    // CREATE
     public function Create(Request $request){
         $event = new \App\Event;
         $this->ValidSave($request, $event);
         return redirect()->route('calendar');
     }
 
-    public function Read($id){
-        $event =  DB::table('events')->where('id', '=', $id)->get();
-        if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin')){
-            // return view('events/update', compact('event'));
-            return view('events/event', compact('event'));
-        }else{
-            return view('events/read', compact('event'));
-        }
-    }
-
+    // UPDATE
     public function Update($id, Request $request){
         $event = \App\Event::find($id);
         $this->ValidSave($request, $event);
         return redirect()->route('calendar');
     }
+
+    // DELETE
     public function Delete($id){
         \App\Event::destroy($id);
         return redirect()->route('calendar');
@@ -56,6 +55,7 @@ class EventsController extends Controller
     /////////////SAVE EVENT////////////
     ///////////////////////////////////
 
+    // VALIDATE AND SAVE
     public function ValidSave(Request $request, $event){
 
         // GENERAL VALIDATION
@@ -128,10 +128,11 @@ class EventsController extends Controller
         $event->save();
     }
 
-    ///////////////////////////////////
-    /////CONVERT TIME TO 24 HOUR///////
-    ///////////////////////////////////
+    //////////////////
+    /////HELPERS//////
+    //////////////////
 
+    // CONVERT TIME TO 24 HOUR
     public function TimeConvert($time){
         $t1 = explode(" ", $time);
         $t2 = explode(":", $t1[0]);

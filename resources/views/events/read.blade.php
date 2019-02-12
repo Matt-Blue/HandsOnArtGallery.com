@@ -4,35 +4,30 @@
 
 <?php use Illuminate\Support\Facades\Route; ?>
 
-<!-- Retrieve Compacted Event(s) With Helper Function -->
-<?php
-$attributes = get_attributes($event); 
-?>
-
 <div class="container-fluid">
     <div class="wrapper" id="info">
         <div class="inner">
             <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h1><?=$attributes['name']?></h1>
+                        <h1><?=$event->name?></h1>
                     </div>
                 </div>
                 <div class="row">
-                    <?php if(isset($attributes['image'])){ ?>
+                    <?php if(isset($event->image)){ ?>
                         <div class="col-md-4 text-center">
-                            <img src="{{asset('public/img/' . $attributes['image'])}}" alt="<?=$attributes['name']?>" width="100%"/>
+                            <img src="{{asset('public/img/' . $event->image)}}" alt="<?=$event->name?>" width="100%"/>
                         </div>                    
                         <div class="col-md-8 text-center">
                     <?php } else { ?>
                         <div class="col-md-12 text-center">
                     <?php } ?>
                         <br><!-- READ EVENT -->
-                        Description: <?=$attributes['description']?>
+                        Description: <?=$event->description?>
                         <br>
                         Event Type: 
                             <?php 
-                                switch($attributes['type']){
+                                switch($event->type){
                                     case "open": echo "Walk-In Studio"; break;
                                     case "workshop": echo "Workshop"; break;
                                     case "party": echo "Party"; break;
@@ -40,27 +35,27 @@ $attributes = get_attributes($event);
                             ?>
                         <br>
                         Start: 
-                            <?=formatDate($attributes['date'])?>                  
-                            at <?=formatTime($attributes['start_time'])?>
+                            <?=formatDate($event->date)?>                  
+                            at <?=formatTime($event->start_time)?>
                         <br>
                         End:   
-                            <?=formatDate($attributes['date'])?> 
-                            at <?=formatTime($attributes['end_time'])?>
+                            <?=formatDate($event->date)?> 
+                            at <?=formatTime($event->end_time)?>
                         <br>
-                        Attending: <?php echo DB::table('signups')->where('event_id', $attributes['id'])->count('user_id'); ?>
+                        Attending: <?php echo DB::table('signups')->where('event_id', $event->id)->count('user_id'); ?>
                         <br>
-                        <?php if($attributes['price'] != NULL){ echo("Price: $" . $attributes['price']); }
+                        <?php if($event->price != NULL){ echo("Price: $" . $event->price); }
                         else{ echo("Price: cost of materials"); }?>                        
                         <br>  
                         @if(Auth::user())
                             <?php
                                 if(DB::table('signups')
                                 ->where('user_id', '=', Auth::user()->id)
-                                ->where('event_id', '=', $attributes['id'])
+                                ->where('event_id', '=', $event->id)
                                 ->exists()){ echo "You have already signed up for this event."; }
                                 else {
                             ?>
-                                <a href="{{ url('signup/'.$attributes['id']) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
+                                <a href="{{ url('signup/'.$event->id) }}"><button class="btn btn-warning pull-center">Signup</button></a><br>
                             <?php } ?>
                         @else
                             <a href="{{ route('login') }}">Login</a> to sign up for this event
