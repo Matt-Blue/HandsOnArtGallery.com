@@ -14,31 +14,17 @@ use App\Http\Controllers\Controller;
 class EventsController extends Controller
 {
     
-//************EVENT CRUD SECTION************//
-    
-    ///////////////////////////////////
-    ///////////CREATE EVENT////////////
-    ///////////////////////////////////
+    /////////////////////////////////
+    ///////////EVENT CRUD////////////
+    /////////////////////////////////
 
     public function Create(Request $request){
-
-        // Send for validation
-        $attributes = $this->check($request);
-
-        // Create event with attributes and save in database
         $event = new \App\Event;
-        $this->Save($event, $attributes);
-
+        $this->ValidSave($request, $event);
         return redirect()->route('calendar');
-
     }
 
-    ///////////////////////////////////
-    ////////////READ EVENT/////////////
-    ///////////////////////////////////
-
     public function Read($id){
-
         $event =  DB::table('events')->where('id', '=', $id)->get();
         if(Auth::user() && Auth::user()->email === \Config::get('constants.super_admin')){
             return view('events/update', compact('event'));
@@ -47,62 +33,23 @@ class EventsController extends Controller
         }
     }
 
-    ///////////////////////////////////
-    ///////////UPDATE EVENT////////////
-    ///////////////////////////////////
-
     public function Update($id, Request $request){
-
-        // Send for validation
-        $attributes = $this->check($request);
-
-        // Create event with attributes and save in database
         $event = \App\Event::find($id);
-        $this->Save($event, $attributes);
-
+        $this->ValidSave($request, $event);
         return redirect()->route('calendar');
-
     }
-
-    ///////////////////////////////////
-    ///////////DELETE EVENT////////////
-    ///////////////////////////////////
-
     public function Delete($id){
-
         \App\Event::destroy($id);
-
         return redirect()->route('calendar');
-
     }
-
-//***********SAVE AND VALIDATE SECTION***********//
 
     ///////////////////////////////////
     /////////////SAVE EVENT////////////
     ///////////////////////////////////
 
-    public function Save($event, $attributes){
+    public function ValidSave(Request $request, $event){
 
-        // Set all attributes in event object and save to database
-        $event->name = $attributes['name'];
-        $event->description = $attributes['description'];
-        $event->type = $attributes['type'];
-        $event->date = $attributes['date'];
-        $event->start_time = $attributes['start_time'];
-        $event->end_time = $attributes['end_time'];
-        $event->price = $attributes['price'];
-        $event->image = $attributes['image'];
-        $event->save();
-
-    }
-
-    ///////////////////////////////////
-    ////////////CHECK EVENT////////////
-    ///////////////////////////////////
-
-    public function Check(Request $request){
-
+        // GENERAL VALIDATION
         $this->validate($request, [
             'name' => 'required|min:5',
             'description' => 'required|min:5',
@@ -142,14 +89,14 @@ class EventsController extends Controller
         }
 
         // TYPE VALIDATION
-        if(!$request->get('type')){ $type = "studio"; }
+        if(!$request->get('type')){ $type = "workshop"; }
         else{ $type = $request->get('type'); }
 
         // PRICE VALIDATION
         if(!$request->get('price')){ $price = NULL; }
         else{ $price = $request->get('price'); }
 
-        // Upload photo & add slug to attributes object
+        // UPLOAD PHOTO AND SET SLUG TO FILE DESTINATION
         if($request->file('image')){
             $file = $request->file('image');
             $file_destination = 'public/img';
@@ -161,21 +108,17 @@ class EventsController extends Controller
             $file_name = null;
         }
 
-        // Set attributes to return
-        $attributes = array(
-            'name' => $name, 
-            'description' => $description, 
-            'date' => $date, 
-            'start_time' => $start_time,
-            'end_time' => $end_time,
-            'type' => $type,
-            'price' => $price,
-            'image' => $file_name
-        );
-        return $attributes;
-
+        $event->name = $name;
+        $event->description = $description;
+        $event->type = $type;
+        $event->date = $date;
+        $event->start_time = $start_time;
+        $event->end_time = $end_time;
+        $event->price = $price;
+        $event->image = $file_name;
+        $event->save();
     }
-
+    
     ///////////////////////////////////
     /////CONVERT TIME TO 24 HOUR///////
     ///////////////////////////////////

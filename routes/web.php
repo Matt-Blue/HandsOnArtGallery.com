@@ -21,11 +21,6 @@ Route::get('/', function () {
     return view('welcome')->with('items', $items);
 });
 
-// Gallery View
-Route::get('/gallery', function () {
-    return view('gallery.gallery');
-})->name('gallery');
-
 // Dashboard
 Route::get('/dashboard', 'DashboardController@Dashboard')->name('dashboard');
 
@@ -35,9 +30,15 @@ Route::get('/calendar', function() {
     return view('calendar', compact('events'));
 })->name('calendar');
 
+// Gallery View
+Route::get('/gallery', function () { return view('gallery.gallery'); })->name('gallery');
+
 //////////////////
 // Events CRUD  //
 //////////////////
+
+// VIEWS
+
 
 // CREATE
 Route::get('/event/new', function () { return view('events.create'); });        //create new event view
@@ -75,4 +76,4 @@ Route::get('/pay/{id}', 'PaymentsController@Checkout')->name('checkout');       
 Route::post('/charge/{event_id}', 'PaymentsController@Charge')->name('charge');   //pay for event (action)
 
 // RECEIPT
-Route::get('/receipt/{event_id}', 'PaymentsController@Receipt')->name('receipt');//pay for event (view receipt)
+Route::get('/receipt/{event_id}', 'PaymentsController@Receipt')->name('receipt'); //pay for event (view receipt)

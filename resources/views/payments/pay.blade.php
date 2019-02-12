@@ -30,7 +30,7 @@
                             <div class="row">Date: <?php echo($e->date); ?></div>
                             <div class="row">Start Time: <?php echo($e->start_time); ?></div>
                             <div class="row">End Time: <?php echo($e->end_time); ?></div>
-                            <div class="row">Price: $<?php echo($e->price); ?></div>
+                            <div class="row">Price: $<?php echo($e->price); ?> + $<?php echo($e->price) * 0.065; ?> tax</div>
 
                             <!-- PAY FOR EVENT FORM -->
 
@@ -39,7 +39,7 @@
                                     <script
                                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                         data-key="pk_test_KqarsaXwAaC77z25DeO3tPEz"
-                                        data-amount="<?php echo($e->price * 100); ?>"
+                                        data-amount="<?php echo($e->price * 100 * 1.065); ?>"
                                         data-name="Hands On Art Gallery &amp; Studio"
                                         data-description="Example charge"
                                         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

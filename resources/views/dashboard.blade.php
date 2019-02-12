@@ -183,8 +183,8 @@
                                                 }else{
                                             ?>
                                                 <a href="{{ url('pay/'.$e->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
-                                            <?php } ?>
-                                            <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a>
+                                                <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a>
+                                            <?php } ?>                                            
                                             <br>
                                         <?php echo('<br><br></div>'); ?>
                         <?php }}}} ?>
