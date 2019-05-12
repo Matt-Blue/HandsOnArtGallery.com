@@ -23,10 +23,9 @@
                     <p class="text-center">Art for real people</p><br>
 
                     @if(Auth::user()->email === Config::get('constants.super_admin'))
-                    <div class="row"><div class="col-md-12 align-center">
-                        <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Back to Dashboard</button></a>
-                        <a href="{{ url('/event') }}"><button class="btn btn-primary pull-center">Add to Events</button></a>
-                    </div></div>
+                        <div class="row"><div class="col-md-12 align-center">
+                            <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Dashboard</button></a>
+                        </div></div>
                     @endif
 
                     <!-- Navigation -->

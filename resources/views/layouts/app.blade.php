@@ -150,6 +150,7 @@
 										</form>
                                         </li>
                                     @endif
+									<li><a href="https://www.google.com/search?q=Hands%20On%20Art%20Gallery%20and%20Studio%20in%20Cape%20Coral#lrd=0x88db3f27a52cad61:0x528479ef28ac595b,3,,,">Review us</a></li>
 									<center>
 										<a href="https://www.facebook.com/handsonartgalleryandstudio/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
 											<button class="btn btn-default"><span class="icon fa-facebook"/></button>

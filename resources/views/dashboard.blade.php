@@ -18,10 +18,10 @@
                 <!-- Buttons -->
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <center><a href="{{ route('calendar') }}"><button class="btn btn-primary pull-center">Manage Events</button></a></center>
+                        <center><a href="{{ route('calendar') }}"><button class="btn btn-primary pull-center">Calendar</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
-                        <center><a href="{{ url('/gallery/all') }}"><button class="btn btn-success pull-center">Manage Gallery</button></a></center>
+                        <center><a href="{{ url('/gallery/all') }}"><button class="btn btn-success pull-center">Gallery</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
                         <center><a href="#requests"><button class="btn btn-warning pull-center" disabled>Party Requests</button></a></center>
@@ -110,8 +110,7 @@
                                             <br>
                                             <?php if($e->price != NULL){ echo("Price: $" . $e->price); }
                                             else{ echo("Price: cost of materials"); }?>   
-                                            <br><br>
-                                            <a href="{{ url('event/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
+                                            <br><br>                                            
                                             
                                             <?php 
                                                 $user_id = Auth::user()->id;
@@ -121,10 +120,11 @@
                                                 ])->get();
                                                 if(sizeof($receipt) != 0){
                                             ?>
-                                                <a href="{{ url('event/'.$e->id) }}"><button class="btn btn-default pull-center">Receipt</button></a>
+                                                <a href="{{ url('event/'.$e->id) }}"><button class="btn pull-center" style="width: 100%;">Receipt</button></a>
                                             <?php
                                                 }else{
                                             ?>
+                                                <a href="{{ url('event/'.$e->id) }}"><button class="btn btn-primary pull-center">View</button></a>
                                                 <a href="{{ url('pay/'.$e->id) }}"><button class="btn btn-success pull-center">Pay</button></a>
                                                 <a href="{{ url('signup/cancel/'.$e->id) }}"><button class="btn btn-danger pull-center">Cancel</button></a>
                                             <?php } ?>                                            

@@ -15,6 +15,12 @@
                     <!-- Calendar -->
                     <h1 class="text-center" style="margin-top: 0.5rem;">Calendar</h1>
 
+                    <div class="text-center">
+                        @if (Auth::user())
+                            <a href="{{ route('dashboard') }}" class="btn btn-success">Dashboard</a></li>
+                        @endif
+                    </div>
+
                     <div id='calendar'></div>
 
                     <script>
@@ -67,13 +73,6 @@
                             If you would like to request a party of your own please visit your <a href="{{ route('dashboard') }}">dashboard</a>.
                             </h3>
                         </div>
-                    </div>
-
-                    <div class="text-center">                    
-                        <a href="{{ url('/') }}" class="btn btn-primary">Home</a>
-                        @if (Auth::user())
-                            <a href="{{ route('dashboard') }}" class="btn btn-success">Dashboard</a></li>
-                        @endif
                     </div>
                 </section>
             </div>

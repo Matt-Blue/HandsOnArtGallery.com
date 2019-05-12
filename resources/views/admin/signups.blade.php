@@ -18,19 +18,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 align-center">
-                        <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Back to Dashboard</button></a>
+                        <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Dashboard</button></a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <br><!-- READ REQUESTS -->
                         <?php 
-                        if(!isset($future_signups) || sizeof($future_signups) === 0){ ?>
+                        if(!isset($signups) || sizeof($signups) === 0){ ?>
                             <div class="text-center">                            
                                 There are no future signups!<br><br>                                
                             </div>
                         <?php } else { 
-                            foreach($future_signups as $s){ 
+                            foreach($signups as $s){ 
                                 $event =  DB::table('events')->where('id', '=', $s->event_id)->first();
                                 $user =  DB::table('users')->where('id', '=', $s->user_id)->first();
                                 ?>
