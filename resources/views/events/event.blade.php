@@ -30,6 +30,11 @@
                         @endif
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12 align-center">
+                        <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Back to Dashboard</button></a>
+                    </div>
+                </div>
                 @if($update)
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">    

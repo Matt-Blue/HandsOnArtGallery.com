@@ -82,7 +82,7 @@
                         <li>Affordably priced</li>
                         <li>All work done by the owner</li>
                     </ul>
-                    <a class="btn btn-success" href="http://www.handsonartwork.net/" target="_blank">
+                    <a class="btn btn-success" href="https://www.handsonartwork.net/" target="_blank">
                     More
                     </a>
                 </section>
@@ -256,6 +256,18 @@
     </div>
 </div>
 
+<!-- Location -->
+<div class="wrapper" id="location">
+    <div class="inner">
+        <section class="main" style="background-color: #FCFCFC;">
+            <header class="major">
+                <h2>Location</h2><br>
+            </header>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14274.604388731957!2d-81.94926481484808!3d26.56347434242882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db3f27a52cad61%3A0x528479ef28ac595b!2sHands+On+Art+Gallery+and+Studio!5e0!3m2!1sen!2sus!4v1553447412740" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
+    </div>
+</div>
+
 <!-- Pricing -->
 <div class="wrapper" id="pricing">
     <div class="inner">
@@ -289,6 +301,23 @@
                         <center><b>Fluid painting additional</b></center>
                         <center><b>Must be 16 or older without supervision</b></center>
                     </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Hours -->
+<div class="wrapper" id="hours">
+    <div class="inner">
+        <section class="main" style="background-color: #FCFCFC;">
+            <header class="major">
+                <h2>Hours</h2><br>
+            </header>
+            <div class="row" style="padding-top 5px;">
+                <div class="12u 12u$(medium)">
+                    <h2><header class="major">Open Monday and Wednesday - Saturday<br>12pm - 6pm</header></h2>
+                    <h4><header class="major">Closed Sunday, Tuesday</header></h4>
                 </div>
             </div>
         </section>

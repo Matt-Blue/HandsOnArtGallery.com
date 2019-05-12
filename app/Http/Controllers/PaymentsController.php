@@ -25,7 +25,7 @@ class PaymentsController extends Controller
 
     }
 
-    public function Charge($event_id){
+    public function ChargeEvent($event_id){
 
         $user_id = Auth::user()->id;
         $event = \App\Event::find($event_id);
@@ -33,7 +33,7 @@ class PaymentsController extends Controller
         \Stripe\Stripe::setApiKey(file_get_contents(base_path().'/storage/payment.key'));
         $token = $_POST['stripeToken'];
         $charge = \Stripe\Charge::create([
-            'amount' => $event->price*100,
+            'amount' => (int)($event->price*100*1.065),
             'currency' => 'usd',
             'description' => $event->description,
             'source' => $token,

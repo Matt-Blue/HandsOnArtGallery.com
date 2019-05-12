@@ -21,7 +21,7 @@
 		<title>Hands On Art Gallery and Studio, bringing creativity to Cape Coral</title>
 		<meta name="description" content="Hands On is Cape Coral's most creative art studio and gallery, offering workshops, parties and more!  We specialize in painting and teach people of all ages." />
 		<meta name="robots" content="" />
-		<meta name="keywords" content="Cape Coral art paint painting creative creativity projects private parties wine fun walk-in studio " />
+		<meta name="keywords" content="cape coral, fort myers, naples, art, activity, project, paint, painting, walk-in, studio, party, gallery, wine, food, custom, creative, fun, unique, social, private" />
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -129,9 +129,9 @@
 						<!-- Nav -->
 							<nav id="menu">
 								<ul class="links">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/#services">Services</a></li>
-									<li><a href="{{ route('calendar') }}">Hours & Calendar</a></li>
+                                    <li><a href="/">Info</a></li>
+									<li><a href="{{ route('calendar') }}">Calendar</a></li>
+									<li><a href="{{ url('gallery/all') }}">Gallery</a></li>
 
 									<!-- Guests -->
                                     @if (Auth::guest())
@@ -151,7 +151,7 @@
                                         </li>
                                     @endif
 									<center>
-										<a href="https://www.facebook.com/handsonartgallery/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
+										<a href="https://www.facebook.com/handsonartgalleryandstudio/" target="_blank" style="border-bottom: none !important; cursor: inherit !important; text-decoration: none !important;">
 											<button class="btn btn-default"><span class="icon fa-facebook"/></button>
 										</a>
 									</center>

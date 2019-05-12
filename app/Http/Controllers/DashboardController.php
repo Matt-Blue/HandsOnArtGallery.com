@@ -13,22 +13,11 @@ use App\Mail\MailRequest;
 
 class DashboardController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
+    public function __construct(){
         $this->middleware('auth');
     }
-
-    ///////////////////////////////////
-    ////////////DASHBOARD//////////////
-    ///////////////////////////////////
     
-    public function Dashboard()
-    {
+    public function Dashboard(){
         // get party requests
         if(Auth::user()->email === \Config::get('constants.super_admin')){
             $requests =  DB::table('requests')->where('status', '=', 0)->get();
@@ -67,5 +56,32 @@ class DashboardController extends Controller
             // return view without signups
             return view('dashboard')->with('requests', $requests)->with('receipts', $receipts);
         }
+    }
+
+    public function Signups(){
+        if(Auth::user()->email === \Config::get('constants.super_admin')){
+            $future_signups = array();
+            $events = DB::table('events')->where('date', '>=', date("Y-m-d"))->get();
+            foreach($events as $e){
+                $signup = DB::table('signups')->where('event_id', '=', $e->id)->get();
+                foreach($signup as $s){
+                    array_push($future_signups, $s);
+                }
+            }
+            return view('admin/signups')->with('future_signups', $future_signups);
+        }else{
+            return redirect()->route('welcome');
+        }
+    }
+
+    public function Receipts(){
+        if(Auth::user()->email === \Config::get('constants.super_admin')){
+            $future_receipts =  DB::table('receipts')->where('created_at', '>=', time()-(21 * 24 * 60 * 60))->get();
+            $past_receipts =  DB::table('receipts')->where('created_at', '<', time()-(21 * 24 * 60 * 60))->get();
+            return view('admin/receipts')->with('future_receipts', $future_receipts)->with('past_receipts', $past_receipts);
+        }else{
+            return redirect()->route('welcome');
+        }
+        
     }
 }

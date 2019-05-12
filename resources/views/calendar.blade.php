@@ -12,19 +12,9 @@
         <div class="wrapper" id="info">
             <div class="inner">
                 <section class="main" style="background-color: #FCFCFC">
-
-                    <h1 class="text-center">Hours & Calendar</h1><br>
-
-                    <!-- Hours -->
-
-                    <div class="row" style="padding-top 5px;">
-                        <div class="12u 12u$(medium)">
-                            <h2><header class="major">Open Monday and Wednesday - Saturday<br>12pm - 6pm</header></h2>
-                            <h4><header class="major">Closed Sunday, Tuesday</header></h4>
-                        </div>
-                    </div><br>
-
                     <!-- Calendar -->
+                    <h1 class="text-center" style="margin-top: 0.5rem;">Calendar</h1>
+
                     <div id='calendar'></div>
 
                     <script>

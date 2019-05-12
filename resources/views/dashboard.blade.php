@@ -21,10 +21,31 @@
                         <center><a href="{{ route('calendar') }}"><button class="btn btn-primary pull-center">Manage Events</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
-                        <center><a href="{{ url('/event') }}"><button class="btn btn-success pull-center">Create Event</button></a></center>
+                        <center><a href="{{ url('/gallery/all') }}"><button class="btn btn-success pull-center">Manage Gallery</button></a></center>
                     </div>
                     <div class="col-md-4 text-center">
-                        <center><a href="#requests"><button class="btn btn-warning pull-center">Party Requests</button></a></center>
+                        <center><a href="#requests"><button class="btn btn-warning pull-center" disabled>Party Requests</button></a></center>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/event') }}"><button class="btn btn-primary pull-center">Add to Events</button></a></center>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/gallery/create') }}"><button class="btn btn-success pull-center" disabled>Add to Gallery</button></a></center>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/pricing') }}"><button class="btn btn-warning pull-center">Manage Price List</button></a></center>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/dashboard/signups') }}"><button class="btn btn-primary pull-center">Event Signups</button></a></center>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/dashboard/receipts') }}"><button class="btn btn-success pull-center">All Receipts</button></a></center>
                     </div>
                 </div>
             </div>
@@ -32,84 +53,6 @@
     </div>
 </div>
 <hr>
-
-<!-- ALL RECEIPTS -->
-<div class="container-fluid" id="requests">
-    <div class="wrapper" id="info">
-        <div class="inner">
-            <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h1>Receipts</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <br><!-- READ RECEIPTS -->
-                        <?php 
-                        if(!isset($receipts) || sizeof($receipts) === 0){ ?>
-                            <div class="text-center">                            
-                                There are no receipts as of 3 weeks ago<br><br>                                
-                            </div>
-                        <?php } else { 
-                            foreach($receipts as $r){ 
-                                $event =  DB::table('events')->where('id', '=', $r->event_id)->get();
-                                $user =  DB::table('users')->where('id', '=', $r->user_id)->get();
-                                ?>
-                                <div class="col-md-4 text-left">
-                                    <?php foreach($event as $e){ ?>
-                                        Event Name: <?=$e->name?><br>
-                                        Event Date: <?=formatDate($e->date)?><br>
-                                        Event Price: $<?=$e->price?><br>
-                                    <?php } ?>
-                                    <?php foreach($user as $u){ ?>
-                                        User: <?=$u->name?><br>
-                                        Email: <?=$u->email?><br>
-                                    <?php } ?>
-                                    Time of purchase: <?=formatDate($r->created_at)?> at <?=formatTime($r->created_at)?><br><br><br>
-                                </div>
-                            <?php }
-                        } ?>
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h1>Upcoming Signups</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <br><!-- READ REQUESTS -->
-                        <?php 
-                        if(!isset($signups) || sizeof($signups) === 0){ ?>
-                            <div class="text-center">                            
-                                There are no future signups!<br><br>                                
-                            </div>
-                        <?php } else { 
-                            foreach($signups as $s){ 
-                                $event =  DB::table('events')->where('id', '=', $s->event_id)->get();
-                                $user =  DB::table('users')->where('id', '=', $s->user_id)->get();
-                                ?>
-                                <div class="col-md-4 text-left">
-                                    <?php foreach($event as $e){ ?>
-                                        Event: <?=$e->name?><br>
-                                        Date: <?=$e->date?><br>
-                                    <?php } ?>
-                                    <?php foreach($user as $u){ ?>
-                                        User: <?=$u->name?><br>
-                                        Email: <?=$u->email?><br><br><br>
-                                    <?php } ?>
-                                </div>
-                            <?php }
-                        } ?>
-                        
-                    </div>
-                </div>  
-            </section>
-        </div>
-    </div> 
-</div>
 
 <!-- USER SECTION -->
 @else

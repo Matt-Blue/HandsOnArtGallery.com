@@ -17,7 +17,7 @@
                     <?php if(isset($event->image)){ ?>
                         <div class="col-md-4 text-center">
                             <img src="{{asset('public/img/' . $event->image)}}" alt="<?=$event->name?>" width="100%"/>
-                        </div>                    
+                        </div>
                         <div class="col-md-8 text-center">
                     <?php } else { ?>
                         <div class="col-md-12 text-center">
