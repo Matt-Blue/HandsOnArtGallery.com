@@ -129,9 +129,10 @@
 						<!-- Nav -->
 							<nav id="menu">
 								<ul class="links">
-                                    <li><a href="/">Info</a></li>
+                                    <li><a href="/">Information</a></li>
 									<li><a href="{{ route('calendar') }}">Calendar</a></li>
 									<li><a href="{{ url('gallery/all') }}">Gallery</a></li>
+									<li><a href="{{ url('parties') }}">Parties</a></li>
 
 									<!-- Guests -->
                                     @if (Auth::guest())
@@ -174,7 +175,7 @@
 											</ul>
 											<br>
 											<ul class="contact-icons">
-												<li style="display: inline;"><a href="https://www.facebook.com/handsonartgallery/" target="_blank"><button class="btn btn-primary"><span class="icon fa-facebook"/></button></a></li>
+												<li style="display: inline;"><a href="https://www.facebook.com/handsonartgalleryandstudio/" target="_blank"><button class="btn btn-primary"><span class="icon fa-facebook"/></button></a></li>
 											</ul>
 											<p class="copyright">&copy; Hands On. All rights reserved.<br>Made by Matthew Bluestein</p>
 										</footer>

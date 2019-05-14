@@ -47,6 +47,9 @@
                     <div class="col-md-4 text-center">
                         <center><a href="{{ url('/dashboard/receipts') }}"><button class="btn btn-success pull-center">All Receipts</button></a></center>
                     </div>
+                    <div class="col-md-4 text-center">
+                        <center><a href="{{ url('/dashboard/users') }}"><button class="btn btn-warning pull-center">All Users</button></a></center>
+                    </div>
                 </div>
             </div>
         </div>

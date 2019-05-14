@@ -12,7 +12,7 @@
             <section class="main" style="background-color: #FCFCFC"><!--Color makes it blend with the logo-->
             <div class="row">
                     <div class="col-md-12 text-center">
-                        <h1>Event Signups</h1>
+                        <h1>All Users</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -24,18 +24,14 @@
                     <div class="col-md-12">
                         <br><!-- READ REQUESTS -->
                         <?php 
-                        if(!isset($signups) || sizeof($signups) === 0){ ?>
+                        if(!isset($users) || sizeof($users) === 0){ ?>
                             <div class="text-center">                            
-                                There are no future signups!<br><br>                                
+                                There are no future users!<br><br>                                
                             </div>
                         <?php } else { 
-                            foreach($signups as $s){ 
-                                $event =  DB::table('events')->where('id', '=', $s->event_id)->first();
-                                $user =  DB::table('users')->where('id', '=', $s->user_id)->first();
-                                ?>
+                            foreach($users as $user){ 
+                            ?>
                                 <div class="col-md-4 text-left">
-                                    Event: <?=$event->name?><br>
-                                    Date: <?=$event->date?><br>
                                     User: <?=$user->name?><br>
                                     Email: <?=$user->email?><br><br><br>
                                 </div>

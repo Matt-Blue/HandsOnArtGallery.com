@@ -55,7 +55,15 @@ class DashboardController extends Controller
             return view('admin/receipts')->with('future_receipts', $future_receipts)->with('past_receipts', $past_receipts);
         }else{
             return redirect()->route('welcome');
-        }
-        
+        }        
+    }
+
+    public function Users(){
+        if(Auth::user()->email === \Config::get('constants.super_admin')){
+            $users =  DB::table('users')->get();
+            return view('admin/users')->with('users', $users);
+        }else{
+            return redirect()->route('welcome');
+        }    
     }
 }

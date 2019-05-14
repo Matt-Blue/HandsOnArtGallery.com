@@ -25,12 +25,16 @@ Route::get('/', function () {
 Route::get('/dashboard', 'DashboardController@Dashboard')->name('dashboard');
 Route::get('/dashboard/signups', 'DashboardController@Signups')->name('admin_signups');
 Route::get('/dashboard/receipts', 'DashboardController@Receipts')->name('admin_receipts');
+Route::get('/dashboard/users', 'DashboardController@Users')->name('admin_users');
 
 // Calendar
 Route::get('/calendar', function() {
     $events = DB::table('events')->get();
     return view('calendar', compact('events'));
 })->name('calendar');
+
+// Parties
+Route::get('/parties', 'PartyController@Parties');
 
 /////////////
 // Events  //

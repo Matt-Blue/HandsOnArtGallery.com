@@ -22,10 +22,12 @@
                     <h1 class="text-center">Gallery</h1>
                     <p class="text-center">Art for real people</p><br>
 
-                    @if(Auth::user()->email === Config::get('constants.super_admin'))
-                        <div class="row"><div class="col-md-12 align-center">
-                            <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Dashboard</button></a>
-                        </div></div>
+                    @if(Auth::user())
+                        @if(Auth::user()->email === Config::get('constants.super_admin'))
+                            <div class="row"><div class="col-md-12 align-center">
+                                <a href="{{ url('/dashboard') }}"><button class="btn btn-success">Dashboard</button></a>
+                            </div></div>
+                        @endif
                     @endif
 
                     <!-- Navigation -->
